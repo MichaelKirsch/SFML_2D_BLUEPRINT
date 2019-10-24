@@ -15,7 +15,12 @@ public:
 
     void run();
 private:
-    float m_CentralClock;
+    void handleEvents();
+    void update();
+    void draw();
+
+    sf::Clock m_Clock;
+    float m_ElapsedTime;
     StateMashine m_Statemashine;
     World m_World;
     GUI m_Gui;

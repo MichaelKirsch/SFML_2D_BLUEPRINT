@@ -2,11 +2,10 @@
 
 class StateMashine {
 public:
-    StateMashine();
     enum class STATES {
-        MENU, RUNNING, CHOOSE_MAP, CHAR_BUILDER
+        MENU, RUNNING, CHOOSE_MAP, CHAR_BUILDER,EXITING
     };
-
+    StateMashine();
     void init(float *m_CentralClock);
 
     STATES getState() { return m_GlobalGameState;};
