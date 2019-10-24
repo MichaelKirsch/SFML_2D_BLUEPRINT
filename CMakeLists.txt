@@ -8,7 +8,7 @@ file(GLOB ALL_REQUIRED_DLL "libs/required_dlls/*.dll")
 file(COPY ${ALL_REQUIRED_DLL} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 set(CMAKE_CXX_STANDARD 17)
 
-set(SOURCE_FILES main.cpp bin/Game.cpp bin/Game.h bin/StateMashine.cpp bin/StateMashine.h bin/Window.cpp bin/Window.h bin/World.cpp bin/World.h bin/GUI.cpp bin/GUI.h bin/ChunkManager.cpp bin/ChunkManager.h bin/Soundmanager.cpp bin/Soundmanager.h bin/NPCManager.cpp bin/NPCManager.h)
+set(SOURCE_FILES main.cpp bin/Game.cpp bin/Game.h bin/StateMashine.cpp bin/StateMashine.h bin/Window.cpp bin/Window.h bin/World.cpp bin/World.h bin/GUI.cpp bin/GUI.h bin/ChunkManager.cpp bin/ChunkManager.h bin/NPCManager.cpp bin/NPCManager.h)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
 find_package(SFML 2.5.1 COMPONENTS system window graphics network audio REQUIRED)

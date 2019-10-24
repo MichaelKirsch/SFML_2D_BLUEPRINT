@@ -5,7 +5,6 @@
 #include "Window.h"
 #include "GUI.h"
 #include "NPCManager.h"
-#include "Soundmanager.h"
 #include "ChunkManager.h"
 
 class MainGameManager {
@@ -22,7 +21,6 @@ private:
     GUI m_Gui;
     Window m_Window;
     NPCmanager m_NPCmanager;
-    Soundmanager m_Soundmanager;
     Chunkmanager m_Chunkmanager;
 };
 
