@@ -12,8 +12,9 @@ sf::RenderWindow *Window::getWindow() {
     return &m_Window;
 }
 
-void Window::init(float *m_CentralClock, StateMashine *stm) {
-
+void Window::init(sf::Vector2u resolution) {
+    m_Window.setSize(resolution);
 }
+
 
 

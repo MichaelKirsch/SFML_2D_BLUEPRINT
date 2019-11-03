@@ -8,6 +8,12 @@ GUI::GUI() {
 
 }
 
-void GUI::init(float *m_CentralClock, StateMashine *stm, Window *window, World *world) {
+void GUI::init(Window *window) {
 
 }
+
+GUI::GUI(Window *window) {
+
+}
+
+

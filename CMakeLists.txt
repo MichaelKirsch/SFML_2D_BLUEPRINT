@@ -12,8 +12,9 @@ file(COPY ${TGUI_DLL} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 set(CMAKE_CXX_STANDARD 17)
 link_libraries(stdc++fs) #link the filesystem
 
-set(SOURCE_FILES main.cpp bin/Game.cpp bin/Game.h bin/StateMashine.cpp bin/StateMashine.h bin/Window.cpp bin/Window.h bin/World.cpp bin/World.h bin/GUI.cpp bin/GUI.h bin/ChunkManager.cpp bin/ChunkManager.h bin/NPCManager.cpp bin/NPCManager.h bin/Utilities/Pathfinder.cpp bin/Utilities/Pathfinder.h)
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+file(GLOB_RECURSE SCRF "bin/*.cpp" "bin/*.hpp")
+
+add_executable(${PROJECT_NAME} ${SCRF} main.cpp)
 
 find_package(SFML 2.5.1 COMPONENTS system window graphics network audio REQUIRED)
 find_package(TGUI 0.8 REQUIRED)

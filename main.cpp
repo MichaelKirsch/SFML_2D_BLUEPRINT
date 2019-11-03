@@ -1,6 +1,6 @@
-#include "bin/Game.h"
+#include "bin/Statemachine/StateMachine.h"
 int main()
 {
-    MainGameManager mainGame;
-    mainGame.run();
+    StateMachine stm;
+    stm.run();
 }
