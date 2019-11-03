@@ -12,23 +12,15 @@ void StateMachine::setState(STATES stateToSet) {
     switch(stateToSet)
     {
         case STATES::MENU:
-            m_currentState=std::make_unique<MainMenu>();
+            m_currentState=std::make_unique<MainMenu>(&m_Essential);
             break;
     }
-}
-
-void StateMachine::tick() {
-    m_currentState->handle_events();
-    m_currentState->logic();
-    m_currentState->render();
 }
 
 void StateMachine::run() {
     while(m_GlobalGameState!=STATES::EXITING)
     {
-        m_currentState->handle_events();
-        m_currentState->logic();
-        m_currentState->render();
+        m_currentState->run();
     }
 }
 
