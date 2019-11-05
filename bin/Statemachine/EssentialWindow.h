@@ -1,13 +1,14 @@
 #pragma once
 
 #include "SFML/Graphics.hpp"
-#include "../Window.h"
-#include "../GUI.h"
+#include "../Statemachine/StateEnum.h"
 
-struct EssentialWindow
+
+class EssentialWindow
 {
-    sf::Clock m_Clock;
-    Window m_window;
-    GUI m_GUI;
-    EssentialWindow() : m_GUI(&m_window){};
+    public:
+        STATES currentState;
+        sf::Clock m_Clock;
+        sf::RenderWindow m_Window;
+        sf::Mouse m_Mouse;
 };

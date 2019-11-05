@@ -4,16 +4,30 @@
 
 #include "GUI.h"
 
-GUI::GUI() {
 
+GameGui::GUI_Manager::GUI_Manager(EssentialWindow &window) : m_Window(window){
+    std::string fontpath = "";
+    fontpath+="Sandwich.tft";
+    m_Font.loadFromFile(fontpath);
 }
 
-void GUI::init(Window *window) {
+void GameGui::GUI_Manager::draw_and_check_mouseover() {
+    for(auto& el:m_Elements)
+    {
+        if(el->mouseOver())
+        {
 
+        }
+
+        el->draw();
+    }
 }
 
-GUI::GUI(Window *window) {
 
+void GameGui::Button::draw() {
+    //GUI_Element::draw();
 }
 
-
+bool GameGui::GUI_Element::mouseOver() {
+    return false;
+}

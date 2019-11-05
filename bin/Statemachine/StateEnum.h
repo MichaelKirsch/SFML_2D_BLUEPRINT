@@ -1,0 +1,5 @@
+#pragma once
+
+enum class STATES {
+    MENU, RUNNING, CHOOSE_MAP, CHAR_BUILDER,EXITING,CLOSING
+};

@@ -5,21 +5,33 @@
 #include <iostream>
 #include "../Statemachine/Gamestate.h"
 #include "../Statemachine/EssentialWindow.h"
-
+#include <experimental/filesystem>
+#include "../GUI.h"
 
 
 class MainMenu : public GameState
 {
 public:
-    MainMenu(EssentialWindow* window);
-    void handle_events(){printf("handle main menu events\n");};
-    void logic() {
-                    printf("handle main menu logic\n");
-                };
-    void render(){
-        printf("handle main menu rendering shit\n");};
+    MainMenu(EssentialWindow& Essential);
+    void handle_events() override;
+    void logic() override;
+    void render() override;
+
 private:
-    EssentialWindow* m_window;
+    GameGui::GUI_Manager m_GUI;
 };
 
+class Exiting : public GameState
+{
+public:
+    Exiting(EssentialWindow& Essential);
+    void handle_events(){};
+    void logic() override;
+    void render() override;
 
+private:
+    float time_left;
+    sf::Text m_GoddbyeText;
+    sf::Font m_Font;
+    sf::Clock m_closingClock;
+};
