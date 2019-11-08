@@ -30,23 +30,11 @@ namespace GameGui
         GUI_Manager(EssentialWindow& window);
         void draw_and_check_mouseover();
         ~GUI_Manager() = default;
-        void addText();
-        void addButton();
-        void addCommoRose();
-        void addLineGraph();
-        void addTexturedButton();
-        void addButtonList();
     private:
         std::vector<std::unique_ptr<GameGui::GUI_Element>> m_Elements;
         EssentialWindow& m_Window;
         sf::Font m_Font;
     };
-
-
-
-
-
-
 }
 
 

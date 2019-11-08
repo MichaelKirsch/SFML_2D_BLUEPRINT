@@ -2,8 +2,8 @@
 
 #include "States.h"
 
-MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential){
-    printf("init menu");
+MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_GUI(Essential){
+
 }
 
 void MainMenu::handle_events() {
@@ -11,7 +11,9 @@ void MainMenu::handle_events() {
     while (getGamestateEssential()->m_Window.pollEvent(m_Event))
     {
         if (m_Event.type == sf::Event::Closed)
-            GameState::getGamestateEssential()->currentState = STATES::EXITING;
+        {
+            GameState::getGamestateEssential()->nextState = STATES::EXITING;
+        }
     }
 }
 
@@ -34,13 +36,9 @@ Exiting::Exiting(EssentialWindow &Essential) : GameState(Essential) {
     m_GoddbyeText.setFont(m_Font);
     m_GoddbyeText.setCharacterSize(100);
     m_GoddbyeText.setString("GOODBYE");
-
     sf::Vector2i textsize= sf::Vector2i(m_GoddbyeText.getLocalBounds().height,m_GoddbyeText.getLocalBounds().width);
-
     m_GoddbyeText.setPosition(0,(GameState::getGamestateEssential()->m_Window.getSize().y/2)-textsize.y/2);
     m_GoddbyeText.setFillColor(sf::Color::Blue);
-
-
 }
 
 void Exiting::logic() {
@@ -50,7 +48,7 @@ void Exiting::logic() {
     m_GoddbyeText.setString(cl);
     if(time_left<0.0)
     {
-        GameState::getGamestateEssential()->currentState = STATES::CLOSING;
+        GameState::getGamestateEssential()->nextState = STATES::CLOSING;
     }
 }
 

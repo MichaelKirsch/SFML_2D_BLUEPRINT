@@ -5,32 +5,32 @@ StateMachine::StateMachine() {
     m_Essential.m_Window.create(sf::VideoMode(1000,1000),"Hello");
     m_Essential.m_Window.clear(sf::Color::Black);
     m_Essential.m_Window.display();
+    m_Essential.nextState = STATES::MENU; //we want to start with the menu
     setState();
 }
 
 
 void StateMachine::setState() {
-    if(m_Essential.currentState != stateCurrentlySet)
+    if(m_Essential.nextState != stateCurrentlySet)
     {
-        stateCurrentlySet = m_Essential.currentState;
-        switch(stateCurrentlySet)
+        switch(m_Essential.nextState)
         {
             case STATES::MENU:
-                m_currentState=std::make_unique<MainMenu>(m_Essential);
+                uniquePtrState=std::make_unique<MainMenu>(m_Essential);
                 break;
             case STATES::EXITING:
-                m_currentState=std::make_unique<Exiting>(m_Essential);
+                uniquePtrState=std::make_unique<Exiting>(m_Essential);
                 break;
         }
+        stateCurrentlySet = m_Essential.nextState;
     }
 }
 
 void StateMachine::run() {
-    while(m_Essential.currentState!=STATES::CLOSING)
+    while(m_Essential.nextState != STATES::CLOSING)
     {
         setState();
-        m_currentState->run();
+        uniquePtrState->run();
     }
     m_Essential.m_Window.close();
 }
-

@@ -7,7 +7,7 @@
 
 GameGui::GUI_Manager::GUI_Manager(EssentialWindow &window) : m_Window(window){
     std::string fontpath = "";
-    fontpath+="Sandwich.tft";
+    fontpath+="Sandwich.ttf";
     m_Font.loadFromFile(fontpath);
 }
 

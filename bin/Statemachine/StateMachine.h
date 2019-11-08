@@ -13,13 +13,13 @@ public:
     StateMachine();
     ~StateMachine() = default;
     void run();
-    STATES getState() { return m_Essential.currentState;};
+    STATES getState() { return m_Essential.nextState;};
     void setState();
 
 private:
     STATES stateCurrentlySet;
     EssentialWindow m_Essential;
-    std::unique_ptr<GameState> m_currentState;
+    std::unique_ptr<GameState> uniquePtrState;
 };
 
 
