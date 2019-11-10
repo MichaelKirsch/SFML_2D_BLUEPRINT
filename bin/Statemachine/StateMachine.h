@@ -3,7 +3,7 @@
 
 #include <memory>
 #include "../States/States.h"
-#include "../GUI.h"
+#include "../GUI/GUI.h"
 #include "Gamestate.h"
 #include "EssentialWindow.h"
 #include "StateEnum.h"

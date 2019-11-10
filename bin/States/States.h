@@ -6,7 +6,7 @@
 #include "../Statemachine/Gamestate.h"
 #include "../Statemachine/EssentialWindow.h"
 #include <experimental/filesystem>
-#include "../GUI.h"
+#include "../GUI/GUI.h"
 
 
 class MainMenu : public GameState

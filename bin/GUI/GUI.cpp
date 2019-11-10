@@ -4,11 +4,9 @@
 
 #include "GUI.h"
 
-
 GameGui::GUI_Manager::GUI_Manager(EssentialWindow &window) : m_Window(window){
     std::string fontpath = "";
     fontpath+="Sandwich.ttf";
-    m_Font.loadFromFile(fontpath);
 }
 
 void GameGui::GUI_Manager::draw_and_check_mouseover() {
@@ -30,4 +28,8 @@ void GameGui::Button::draw() {
 
 bool GameGui::GUI_Element::mouseOver() {
     return false;
+}
+
+void GameGui::GUI_Style::loadStyleSheet() {
+
 }
