@@ -16,9 +16,8 @@ public:
     void handle_events() override;
     void logic() override;
     void render() override;
-
 private:
-    GameGui::GUI_Manager m_GUI;
+    GameGui::Button m_But;
 };
 
 class Exiting : public GameState

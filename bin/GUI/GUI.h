@@ -4,50 +4,29 @@
 #include <experimental/filesystem>
 #include <vector>
 #include <string>
+#include <iostream>
 
 namespace GameGui
 {
-
-    class GUI_Style
+    class Button
     {
     public:
-        GUI_Style(std::string styleSheetPath);
-        ~GUI_Style()= default;
-        void setStyle(GUI_Style& style);
-    private:
-        void loadStyleSheet();
-
-    };
-
-    class GUI_Element : public sf::Drawable
-    {
-    public:
-        GUI_Element(){};
-        ~GUI_Element()= default;
-        virtual void draw(); //draw the element
-        virtual bool mouseOver(); //returns if mouse is over and will change the color of the element to the mouseovercolor
-    private:
-
-    };
-
-    class Button : public GUI_Element
-    {
-        Button(){};
+        Button();
+        void setWindow(EssentialWindow* es);
         void draw();
-        bool gotClicked();
-        ~Button() = default;
-    };
-
-    class GUI_Manager {
-    public:
-        GUI_Manager(EssentialWindow& window);
-        void draw_and_check_mouseover();
-        ~GUI_Manager() = default;
+        bool mouseover();
     private:
-        std::vector<std::unique_ptr<GameGui::GUI_Element>> m_Elements;
-        EssentialWindow& m_Window;
+        std::string m_string;
+        EssentialWindow* es;
+        sf::Color rectCol;
+        sf::Color defa{100,100,100};
+        sf::Color moc{245, 167, 66};
+        sf::Color textcol{255,255,255};
+        sf::Text m_Text;
+        sf::RectangleShape m_Rect;
+        sf::Vector2u pos;
+        sf::Font m_Font;
     };
 }
-
 
 
