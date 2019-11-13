@@ -1,4 +1,5 @@
-#include "bin/Statemachine/StateMachine.h"
+#include "src/Statemachine/StateMachine.h"
+
 int main()
 {
     StateMachine stm;
