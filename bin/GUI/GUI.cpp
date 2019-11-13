@@ -73,3 +73,13 @@ void gui::Button::setEssentialWindow(EssentialWindow *in) {
 gui::Button::~Button() {
 }
 
+std::string gui::Button::getText() {
+    return m_Text;
+}
+
+void gui::CommoRose::refactor() {
+    m_MainCircle.setPointCount(m_Buttons.size());
+    for (auto bu:m_Buttons) {
+
+    }
+}

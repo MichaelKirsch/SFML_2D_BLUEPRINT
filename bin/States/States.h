@@ -17,7 +17,7 @@ public:
     void logic() override;
     void render() override;
 private:
-    gui::Button m_but;
+    gui::Button m_but,b2;
 };
 
 class Exiting : public GameState
@@ -33,4 +33,5 @@ private:
     sf::Text m_GoddbyeText;
     sf::Font m_Font;
     sf::Clock m_closingClock;
+    gui::Button b1;
 };

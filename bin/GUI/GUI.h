@@ -3,6 +3,7 @@
 #pragma once
 
 #include "../Statemachine/EssentialWindow.h"
+#include <list>
 
 namespace gui
 {
@@ -19,6 +20,7 @@ namespace gui
         void setSize(sf::Vector2u);
         void setFillColor(sf::Color newColor);
         void update();
+        std::string getText();
         bool isClicked();
         void setPositionOfTopLeft(sf::Vector2u pos);
         void setPositionOfCenter(sf::Vector2u pos);
@@ -30,6 +32,21 @@ namespace gui
         std::string m_Text;
         sf::Vector2u m_Size,m_Pos = {0,0};
         sf::Color m_FillColor,m_MouseOver,m_CurrentRectCol;
+    };
+
+    class CommoRose
+    {
+        //the commorose should always be about 50 percent of the window
+    public:
+        CommoRose();
+        ~CommoRose()= default;
+        void addButton();
+    private:
+        void refactor();
+        sf::Vector2f getPixelPos(sf::Vector2u);
+        EssentialWindow* m_Essential;
+        sf::CircleShape m_MainCircle;
+        std::list<Button> m_Buttons;
     };
 
 }
