@@ -3,12 +3,16 @@
 #include "States.h"
 
 MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential){
-    m_But.setWindow(&Essential);
+    m_but.setEssentialWindow(&Essential);
+    m_but.setFillColor(sf::Color::Blue);
+    m_but.setSize({5,5});
+    m_but.setPositionOfTopLeft({50,50});
 }
 
 void MainMenu::handle_events() {
+    m_but.update();
 
-    if(m_But.mouseover()&&getGamestateEssential()->m_Mouse.isButtonPressed(sf::Mouse::Button::Left))
+    if(m_but.isClicked())
     {
         GameState::getGamestateEssential()->nextState = STATES::EXITING;
     }
@@ -23,19 +27,20 @@ void MainMenu::handle_events() {
 }
 
 void MainMenu::logic() {
+
 }
 
 void MainMenu::render() {
     sf::RectangleShape p;
     p.setSize(sf::Vector2f(100,100));
     p.setPosition(100,100);
-    m_But.draw();
     getGamestateEssential()->m_Window.draw(p);
+    m_but.draw();
     getGamestateEssential()->m_Window.display();
 }
 
 Exiting::Exiting(EssentialWindow &Essential) : GameState(Essential) {
-    time_left =3.0;
+    time_left = 3.0;
     std::string po = std::experimental::filesystem::current_path().parent_path().string();
     po+="/Data/Font/arial.ttf";
     m_Font.loadFromFile(po);

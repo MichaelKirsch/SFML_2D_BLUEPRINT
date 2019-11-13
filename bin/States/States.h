@@ -17,7 +17,7 @@ public:
     void logic() override;
     void render() override;
 private:
-    GameGui::Button m_But;
+    gui::Button m_but;
 };
 
 class Exiting : public GameState
