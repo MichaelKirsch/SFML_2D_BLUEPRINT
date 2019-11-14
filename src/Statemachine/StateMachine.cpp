@@ -6,8 +6,11 @@ StateMachine::StateMachine() {
     m_Essential.m_Window.clear(sf::Color::Black);
     m_Essential.m_Window.display();
     std::string path= std::experimental::filesystem::current_path().parent_path().string();
-    path+="/data/Font/arial.ttf";
-    m_Essential.m_GlobFont.loadFromFile(path);
+    path+="/data/Font/Ubuntu-R.ttf";
+    if(!m_Essential.m_GlobFont.loadFromFile(path))
+    {
+        std::cout<<"FONT DIDNT LOAD"<<std::endl;
+    }
     m_Essential.nextState = STATES::MENU; //we want to start with the menu
     setState();
 }

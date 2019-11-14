@@ -1,11 +1,11 @@
 
 
+
 #include "GUI.h"
 
 gui::Button::Button(EssentialWindow *es, sf::Vector2u pos, std::string text, sf::Vector2u size) : m_Essential(es){
     this->m_Size = size;
     this->m_Pos = pos;
-    this->m_String = text;
     this->m_Text.setFont(es->m_GlobFont);
     this->m_Text.setFillColor(sf::Color::White);
     this->mouseOver = false;
@@ -34,7 +34,7 @@ void gui::Button::update() {
 }
 
 bool gui::Button::isClicked() {
-    //update(); //maybe that will prevent some bugs i dont know
+    update();
     return (mouseOver&&m_Essential->m_Mouse.isButtonPressed(sf::Mouse::Left));
 }
 
@@ -49,14 +49,13 @@ void gui::Button::setSize(sf::Vector2u newSize) {
 }
 
 void gui::Button::refactor() {
-    //textsize is determined by the rectsize
-    m_Text.setString(m_String);
     m_Text.setFillColor(m_TextCol);
     auto windowSize = m_Essential->m_Window.getSize();
     auto sizeInPixels = sf::Vector2f(m_Size.x*(windowSize.x/100.f),m_Size.y*(windowSize.y/100.f));
     auto positionInPixels =  sf::Vector2f(m_Pos.x*(windowSize.x/100.f),m_Pos.y*(windowSize.y/100.f));
-    m_Rect.setSize(sizeInPixels);
-    m_Text.setCharacterSize(sizeInPixels.y);
+    m_Text.setCharacterSize(sizeInPixels.y); //textsize will be calculated by the rect size
+    auto char_count = m_Text.getGlobalBounds().width+m_Text.getLineSpacing();
+    m_Rect.setSize(sf::Vector2f(char_count,sizeInPixels.y*1.5));
     m_Rect.setPosition(positionInPixels);
     m_Text.setPosition(positionInPixels);
 }
@@ -74,6 +73,7 @@ void gui::Button::setPositionOfCenter(sf::Vector2u pos) {
 
 void gui::Button::setEssentialWindow(EssentialWindow *in) {
     m_Essential = in;
+    this->m_Text.setFont(m_Essential->m_GlobFont);
     refactor();
 }
 
@@ -81,11 +81,11 @@ gui::Button::~Button() {
 }
 
 std::string gui::Button::getText() {
-    return m_String;
+    return m_Text.getString();
 }
 
-void gui::Button::setText(std::string in) {
-    m_String = in;
+void gui::Button::setText(std::string inString) {
+    m_Text.setString(inString);
     refactor();
 }
 
@@ -94,9 +94,8 @@ void gui::Button::setTextColor(sf::Color newColor) {
     refactor();
 }
 
-void gui::CommoRose::refactor() {
-    m_MainCircle.setPointCount(m_Buttons.size());
-    for (auto bu:m_Buttons) {
+gui::Button::Button() {
 
-    }
 }
+
+
