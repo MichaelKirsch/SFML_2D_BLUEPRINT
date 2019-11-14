@@ -5,6 +5,8 @@ MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential){
     b2.setEssentialWindow(&Essential);
     b2.setFillColor(sf::Color::Green);
     b2.setSize({3,3});
+    b2.setText("Hello");
+    b2.setTextColor(sf::Color::White);
     b2.setPositionOfTopLeft({8,8});
     m_but.setFillColor(sf::Color::Blue);
     m_but.setSize({5,5});

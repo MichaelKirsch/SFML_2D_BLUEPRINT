@@ -6,10 +6,11 @@
 #include "Gamestate.h"
 #include "EssentialWindow.h"
 #include "StateEnum.h"
+#include "experimental/filesystem"
 
 class StateMachine {
 public:
-    StateMachine();
+    StateMachine(); //here we set all the essentials
     ~StateMachine() = default;
     void run();
     STATES getState() { return m_Essential.nextState;};

@@ -3,7 +3,6 @@
 #include "SFML/Graphics.hpp"
 #include "../Statemachine/StateEnum.h"
 
-
 class EssentialWindow
 {
     public:
@@ -11,4 +10,5 @@ class EssentialWindow
         sf::Clock m_Clock;
         sf::RenderWindow m_Window;
         sf::Mouse m_Mouse;
+        sf::Font m_GlobFont;
 };

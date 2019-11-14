@@ -5,7 +5,9 @@
 gui::Button::Button(EssentialWindow *es, sf::Vector2u pos, std::string text, sf::Vector2u size) : m_Essential(es){
     this->m_Size = size;
     this->m_Pos = pos;
-    this->m_Text = text;
+    this->m_String = text;
+    this->m_Text.setFont(es->m_GlobFont);
+    this->m_Text.setFillColor(sf::Color::White);
     this->mouseOver = false;
     refactor();
 }
@@ -38,6 +40,7 @@ bool gui::Button::isClicked() {
 
 void gui::Button::draw() {
     m_Essential->m_Window.draw(m_Rect);
+    m_Essential->m_Window.draw(m_Text);
 }
 
 void gui::Button::setSize(sf::Vector2u newSize) {
@@ -47,11 +50,15 @@ void gui::Button::setSize(sf::Vector2u newSize) {
 
 void gui::Button::refactor() {
     //textsize is determined by the rectsize
+    m_Text.setString(m_String);
+    m_Text.setFillColor(m_TextCol);
     auto windowSize = m_Essential->m_Window.getSize();
     auto sizeInPixels = sf::Vector2f(m_Size.x*(windowSize.x/100.f),m_Size.y*(windowSize.y/100.f));
     auto positionInPixels =  sf::Vector2f(m_Pos.x*(windowSize.x/100.f),m_Pos.y*(windowSize.y/100.f));
     m_Rect.setSize(sizeInPixels);
+    m_Text.setCharacterSize(sizeInPixels.y);
     m_Rect.setPosition(positionInPixels);
+    m_Text.setPosition(positionInPixels);
 }
 
 void gui::Button::setPositionOfTopLeft(sf::Vector2u pos) {
@@ -74,7 +81,17 @@ gui::Button::~Button() {
 }
 
 std::string gui::Button::getText() {
-    return m_Text;
+    return m_String;
+}
+
+void gui::Button::setText(std::string in) {
+    m_String = in;
+    refactor();
+}
+
+void gui::Button::setTextColor(sf::Color newColor) {
+    m_TextCol = newColor;
+    refactor();
 }
 
 void gui::CommoRose::refactor() {
