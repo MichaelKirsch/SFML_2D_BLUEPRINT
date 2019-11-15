@@ -9,7 +9,15 @@
 
 namespace gui
 {
-    class Button
+    class Widget
+    {
+    public:
+        virtual ~Widget();
+        virtual void draw();
+        bool isVisible;
+    };
+
+    class Button : public Widget
     {
     //the button position is always the top left. but you can receive the center
     public:
@@ -36,6 +44,44 @@ namespace gui
         sf::Vector2u m_Size,m_Pos = {0,0};
         sf::Color m_FillColor,m_MouseOver,m_TextCol;
     };
+
+    class CommoRose : public Widget
+    {
+    public:
+        CommoRose()= default;
+        ~CommoRose()=default;
+        void addButton(std::string name);
+        void releaseButton(int listplace);
+
+    private:
+        std::list<Button> m_Buttons;
+
+    };
+
+    class DiamondShapedMenu : public Widget
+    {
+    public:
+        DiamondShapedMenu(){};
+    private:
+        void refactor();
+        sf::RectangleShape m_Diamond;
+        EssentialWindow* m_Essential;
+
+    };
+
+    class Manager
+    {
+    public:
+        Manager(){};
+        void draw();
+        ~Manager()=default;
+        gui::Button* addButton();
+
+    private:
+        //we need a global style here. this will be responsible for a uniform look
+        std::vector<std::unique_ptr<Widget>> m_Elements;
+    };
+
 }
 
 

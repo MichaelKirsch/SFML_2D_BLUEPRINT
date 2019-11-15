@@ -55,7 +55,7 @@ void gui::Button::refactor() {
     auto positionInPixels =  sf::Vector2f(m_Pos.x*(windowSize.x/100.f),m_Pos.y*(windowSize.y/100.f));
     m_Text.setCharacterSize(sizeInPixels.y); //textsize will be calculated by the rect size
     auto char_count = m_Text.getGlobalBounds().width+m_Text.getLineSpacing();
-    m_Rect.setSize(sf::Vector2f(char_count,sizeInPixels.y*1.5));
+    m_Rect.setSize(sf::Vector2f(char_count,sizeInPixels.y*1.61));
     m_Rect.setPosition(positionInPixels);
     m_Text.setPosition(positionInPixels);
 }
@@ -99,3 +99,16 @@ gui::Button::Button() {
 }
 
 
+gui::Button* gui::Manager::addButton() {
+    auto *newButton = new Button();
+    m_Elements.emplace_back(newButton);
+    return newButton;
+}
+
+void gui::Manager::draw() {
+    for(auto& el:m_Elements)
+    {
+        if(el->isVisible)
+            el->draw();
+    }
+}
