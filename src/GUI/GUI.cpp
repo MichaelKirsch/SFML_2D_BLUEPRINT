@@ -5,6 +5,7 @@
 
 gui::Button::Button(EssentialWindow *es, sf::Vector2u pos, std::string text, sf::Vector2u size) : m_Essential(es){
     this->m_Size = size;
+    this->isVisible = true;
     this->m_Pos = pos;
     this->m_Text.setFont(es->m_GlobFont);
     this->m_Text.setFillColor(sf::Color::White);
@@ -94,13 +95,12 @@ void gui::Button::setTextColor(sf::Color newColor) {
     refactor();
 }
 
-gui::Button::Button() {
-
+void gui::Button::setVisible(bool vis) {
+    isVisible = vis;
 }
 
-
 gui::Button* gui::Manager::addButton() {
-    auto *newButton = new Button();
+    auto *newButton = new Button(&m_Essential);
     m_Elements.emplace_back(newButton);
     return newButton;
 }
@@ -110,5 +110,12 @@ void gui::Manager::draw() {
     {
         if(el->isVisible)
             el->draw();
+    }
+}
+
+void gui::Manager::update() {
+    for(auto& el:m_Elements)
+    {
+        el->update();
     }
 }

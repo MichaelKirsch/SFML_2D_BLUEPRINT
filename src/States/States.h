@@ -24,5 +24,4 @@ private:
     sf::Text m_GoddbyeText;
     sf::Font m_Font;
     sf::Clock m_closingClock;
-    gui::Button b1;
 };

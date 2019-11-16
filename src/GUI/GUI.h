@@ -12,19 +12,20 @@ namespace gui
     class Widget
     {
     public:
-        virtual ~Widget();
-        virtual void draw();
-        bool isVisible;
+        virtual ~Widget()= default;
+        virtual void draw(){};
+        virtual void update(){};
+        bool isVisible = true;
     };
 
     class Button : public Widget
     {
     //the button position is always the top left. but you can receive the center
     public:
-        Button();
         Button(EssentialWindow* es, sf::Vector2u pos = {0,0}, std::string text = "not configured yet", sf::Vector2u size ={5,5});
         ~Button();
         void draw();
+        void setVisible(bool visibility);
         void setEssentialWindow(EssentialWindow* );
         void setSize(sf::Vector2u);
         void setTextColor(sf::Color newColor);
@@ -72,12 +73,14 @@ namespace gui
     class Manager
     {
     public:
-        Manager(){};
+        Manager(EssentialWindow& es):m_Essential(es) {};
         void draw();
+        void update();
         ~Manager()=default;
         gui::Button* addButton();
 
     private:
+        EssentialWindow& m_Essential;
         //we need a global style here. this will be responsible for a uniform look
         std::vector<std::unique_ptr<Widget>> m_Elements;
     };
