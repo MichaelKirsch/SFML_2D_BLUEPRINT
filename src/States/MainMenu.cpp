@@ -8,10 +8,6 @@ MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Esse
     b2->setText("Hello World ");
     b2->setTextColor(sf::Color::White);
     b2->setPositionOfTopLeft({8,8});
-    tx.setString("helo");
-    tx.setFont(Essential.m_GlobFont);
-    tx.setCharacterSize(50);
-    tx.setFillColor(sf::Color::White);
 }
 
 void MainMenu::handle_events() {
