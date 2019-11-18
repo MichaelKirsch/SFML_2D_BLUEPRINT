@@ -6,10 +6,6 @@
 #include "../Statemachine/Gamestate.h"
 #include "../Statemachine/EssentialWindow.h"
 #include <experimental/filesystem>
-#include "../GUI/GUI.h"
-
-
-
 
 class Exiting : public GameState
 {

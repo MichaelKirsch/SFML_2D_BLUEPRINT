@@ -2,8 +2,6 @@
 
 
 void GameState::run() {
-    if(this!= nullptr)
-    {
         m_elapsed = m_Essential.m_Clock.restart().asSeconds();
         state_timer+=m_elapsed;
         frame_cl+=m_elapsed;
@@ -27,11 +25,7 @@ void GameState::run() {
             timeNeededForEvents = m_Essential.m_Clock.getElapsedTime().asSeconds();
             evt_cl=0;
         }
-    } else
-    {
-        m_Essential.nextState = STATES :: EXITING;
     }
-}
 
 GameState::GameState(EssentialWindow &window) : m_Essential(window) {
     state_timer = m_Essential.m_Clock.getElapsedTime().asSeconds();

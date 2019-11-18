@@ -2,7 +2,7 @@
 
 MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential){
     b2 = m_Gui.addButton();
-    m1 = m_Gui.addMenu();
+    //m1 = m_Gui.addMenu();
     //m1->createMenu({"New Game","Load Game","Settings"});
     b2->setPositionOfTopLeft({8,8});
 }

@@ -3,7 +3,7 @@
 #include "../Statemachine/Gamestate.h"
 #include "../Statemachine/EssentialWindow.h"
 #include <experimental/filesystem>
-#include "../GUI/GUI.h"
+#include "../GUI/GuiManager.h"
 
 class MainMenu : public GameState
 {
@@ -15,7 +15,6 @@ public:
 private:
     gui::Manager m_Gui;
     gui::Button* b2;
-    gui::Menu* m1;
 
 };
 
