@@ -4,14 +4,13 @@
 
 class GameState {
 public:
-    GameState(EssentialWindow& window) : m_Essential(window) {
-        framerate = 60; logicrate =30;eventrate =30;
-    };
+    GameState(EssentialWindow& window);
     EssentialWindow* getGamestateEssential(){ return &m_Essential;};
-    void setFramerate(unsigned int newRate);
-    void setLogicrate(unsigned int newRate);
-    void setEventrate(unsigned int newRate);
-    float getElapsedTime(){ return m_elapsed;};
+    float getRuntimeOfState(){ return state_timer;};
+    float getStartingTimeOfState(){ return time_at_start;};
+    float getRenderingTime(bool asFps);
+    float getLogicTime(bool asFps);
+    float getEventTime(bool asFps);
     void run();
 
     virtual void handle_events() {
@@ -30,10 +29,7 @@ public:
 
 private:
     EssentialWindow& m_Essential;
-    float m_elapsed;
-    float frame_cl;
-    float logic_cl;
-    float evt_cl;
-    unsigned int framerate, logicrate,eventrate;
+    float m_elapsed,timeNeededForRender,timeNeededForLogic,timeNeededForEvents;
+    float frame_cl,logic_cl,evt_cl,time_at_start,state_timer;
 };
 

@@ -5,6 +5,9 @@ StateMachine::StateMachine() {
     m_Essential.m_Window.create(sf::VideoMode(1000,1000),"Hello");
     m_Essential.m_Window.clear(sf::Color::Black);
     m_Essential.m_Window.display();
+    m_Essential.Framerate = 60;
+    m_Essential.Updaterate = 40;
+    m_Essential.Eventrate = 50;
     std::string path= std::experimental::filesystem::current_path().parent_path().string();
     path+="/data/Font/Ubuntu-B.ttf";
     if(!m_Essential.m_GlobFont.loadFromFile(path))

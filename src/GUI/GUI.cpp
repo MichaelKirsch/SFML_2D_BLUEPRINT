@@ -3,12 +3,13 @@
 
 #include "GUI.h"
 
-gui::Button::Button(EssentialWindow *es, sf::Vector2u pos, std::string text, sf::Vector2u size) : m_Essential(es){
-    this->m_Size = size;
+gui::Button::Button(EssentialWindow *es, sf::Vector2u pos, std::string text, unsigned int width) : m_Essential(es){
+    this->m_Size = {width,m_Essential->m_GuiStyle.buttonHeight};
     this->isVisible = true;
     this->m_Pos = pos;
     this->m_Text.setFont(es->m_GlobFont);
-    this->m_Text.setFillColor(sf::Color::White);
+    this->setTextColor(es->m_GuiStyle.textColor);
+    this->setFillColor(es->m_GuiStyle.defaultColor);
     this->mouseOver = false;
     refactor();
 }
@@ -117,5 +118,46 @@ void gui::Manager::update() {
     for(auto& el:m_Elements)
     {
         el->update();
+    }
+}
+
+gui::Menu *gui::Manager::addMenu() {
+    auto *newMenu = new Menu(&m_Essential);
+    m_Elements.emplace_back(newMenu);
+    return newMenu;
+}
+
+bool gui::Menu::getButtonState(std::string buttonName) {
+    if(m_Buttons.find(buttonName)!=m_Buttons.end())
+    {
+        return m_Buttons.at(buttonName)->isClicked();
+    }
+    return false; //if the button cant be find its automaticly 0
+}
+
+void gui::Menu::createMenu(std::vector<std::string> input) {
+    auto index =1;
+    unsigned int space_until_next_button = (100/m_Essential->m_Window.getSize().y)*m_Essential->m_Window.getSize().y/input.size();
+    for(auto& bu:input)
+    {
+        sf::Vector2u pos = {50,index*space_until_next_button};
+        auto buffer = new gui::Button(m_Essential);
+        buffer->setPositionOfCenter(pos);
+        m_Buttons.insert(std::make_pair(bu,buffer));
+        index++;
+    }
+}
+
+void gui::Menu::draw() {
+    for(auto& bu:m_Buttons)
+    {
+        bu.second->draw();
+    }
+}
+
+void gui::Menu::update() {
+    for(auto& bu:m_Buttons)
+    {
+        bu.second->update();
     }
 }

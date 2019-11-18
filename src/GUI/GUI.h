@@ -22,7 +22,7 @@ namespace gui
     {
     //the button position is always the top left. but you can receive the center
     public:
-        Button(EssentialWindow* es, sf::Vector2u pos = {0,0}, std::string text = "not configured yet", sf::Vector2u size ={5,5});
+        Button(EssentialWindow* es, sf::Vector2u pos = {0,0}, std::string text = "not configured yet", unsigned int width = 1);
         ~Button();
         void draw();
         void setVisible(bool visibility);
@@ -46,28 +46,20 @@ namespace gui
         sf::Color m_FillColor,m_MouseOver,m_TextCol;
     };
 
-    class CommoRose : public Widget
+    class Menu : public Widget
     {
     public:
-        CommoRose()= default;
-        ~CommoRose()=default;
-        void addButton(std::string name);
-        void releaseButton(int listplace);
-
+        Menu(EssentialWindow* es) : m_Essential(es) {};
+        ~Menu() = default;
+        bool getButtonState(std::string buttonName);
+        void createMenu(std::vector<std::string>);
+        void setSizeofButtons(unsigned int size);
+        void update();
+        void draw();
     private:
-        std::list<Button> m_Buttons;
-
-    };
-
-    class DiamondShapedMenu : public Widget
-    {
-    public:
-        DiamondShapedMenu(){};
-    private:
-        void refactor();
-        sf::RectangleShape m_Diamond;
         EssentialWindow* m_Essential;
-
+        unsigned int m_buttonSize;
+        std::map<std::string,std::unique_ptr<gui::Button>> m_Buttons;
     };
 
     class Manager
@@ -78,10 +70,9 @@ namespace gui
         void update();
         ~Manager()=default;
         gui::Button* addButton();
-
+        gui::Menu* addMenu();
     private:
         EssentialWindow& m_Essential;
-        //we need a global style here. this will be responsible for a uniform look
         std::vector<std::unique_ptr<Widget>> m_Elements;
     };
 

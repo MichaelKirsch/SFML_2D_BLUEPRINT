@@ -2,37 +2,52 @@
 
 
 void GameState::run() {
+    if(this!= nullptr)
+    {
         m_elapsed = m_Essential.m_Clock.restart().asSeconds();
-
+        state_timer+=m_elapsed;
         frame_cl+=m_elapsed;
         logic_cl+=m_elapsed;
         evt_cl+=m_elapsed;
-        if(frame_cl>1.0/framerate)
+        if(frame_cl>1.0/m_Essential.Framerate)
         {
-
             render();
+            timeNeededForRender = m_Essential.m_Clock.getElapsedTime().asSeconds();
             frame_cl=0;
         }
-        if(logic_cl>1.0/logicrate)
+        if(logic_cl>1.0/m_Essential.Updaterate)
         {
             logic();
+            timeNeededForLogic = m_Essential.m_Clock.getElapsedTime().asSeconds();
             logic_cl=0;
         }
-        if(evt_cl>1.0/eventrate)
+        if(evt_cl>1.0/m_Essential.Eventrate)
         {
             handle_events();
+            timeNeededForEvents = m_Essential.m_Clock.getElapsedTime().asSeconds();
             evt_cl=0;
         }
+    } else
+    {
+        m_Essential.nextState = STATES :: EXITING;
+    }
 }
 
-void GameState::setFramerate(unsigned int newRate) {
-    this->framerate = newRate;
+GameState::GameState(EssentialWindow &window) : m_Essential(window) {
+    state_timer = m_Essential.m_Clock.getElapsedTime().asSeconds();
+    time_at_start = m_Essential.m_Clock.getElapsedTime().asSeconds();
 }
 
-void GameState::setLogicrate(unsigned int newRate) {
-    this->logicrate = newRate;
+float GameState::getEventTime(bool asFps) {
+    return asFps ? 1.0f/timeNeededForLogic : timeNeededForLogic;
 }
 
-void GameState::setEventrate(unsigned int newRate) {
-    this->eventrate = newRate;
+float GameState::getLogicTime(bool asFps) {
+    return asFps ? 1.0f/timeNeededForLogic : timeNeededForLogic;
 }
+
+float GameState::getRenderingTime(bool asFps) {
+    return asFps ? 1.0f/timeNeededForRender : timeNeededForRender;
+}
+
+

@@ -2,17 +2,14 @@
 
 MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential){
     b2 = m_Gui.addButton();
-    b2->setEssentialWindow(&Essential);
-    b2->setFillColor(sf::Color::Green);
-    b2->setSize({3,3});
-    b2->setText("Hello World ");
-    b2->setTextColor(sf::Color::White);
+    m1 = m_Gui.addMenu();
+    //m1->createMenu({"New Game","Load Game","Settings"});
     b2->setPositionOfTopLeft({8,8});
 }
 
 void MainMenu::handle_events() {
     m_Gui.update();
-    b2->setText(std::to_string(cl.getElapsedTime().asSeconds()));
+    b2->setText("one Frame takes:"+std::to_string(getRenderingTime(0))+" Seconds to load");
     if(b2->isClicked())
     {
         GameState::getGamestateEssential()->nextState = STATES::EXITING;

@@ -15,8 +15,8 @@ public:
 private:
     gui::Manager m_Gui;
     gui::Button* b2;
-    sf::Text tx;
-    sf::Clock cl;
+    gui::Menu* m1;
+
 };
 
 
