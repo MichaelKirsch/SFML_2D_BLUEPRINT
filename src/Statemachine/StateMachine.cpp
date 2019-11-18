@@ -10,7 +10,7 @@ StateMachine::StateMachine() {
     m_Essential.Eventrate = 50;
     m_Essential.m_GuiStyle.textColor=sf::Color::Green;
     std::string path= std::experimental::filesystem::current_path().parent_path().string();
-    path+="/data/Font/Ubuntu-B.ttf";
+    path+="/data/Font/Ubuntu-R.ttf";
     if(!m_Essential.m_GlobFont.loadFromFile(path))
     {
         std::cout<<"FONT DIDNT LOAD"<<std::endl;
