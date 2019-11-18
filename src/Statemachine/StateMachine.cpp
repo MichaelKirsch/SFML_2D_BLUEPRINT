@@ -8,6 +8,7 @@ StateMachine::StateMachine() {
     m_Essential.Framerate = 60;
     m_Essential.Updaterate = 40;
     m_Essential.Eventrate = 50;
+    m_Essential.m_GuiStyle.textColor=sf::Color::Green;
     std::string path= std::experimental::filesystem::current_path().parent_path().string();
     path+="/data/Font/Ubuntu-B.ttf";
     if(!m_Essential.m_GlobFont.loadFromFile(path))
