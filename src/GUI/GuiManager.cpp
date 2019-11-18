@@ -22,3 +22,9 @@ void gui::Manager::update() {
         el->update();
     }
 }
+
+gui::Menu *gui::Manager::addMenu() {
+    auto *newButton = new Menu(&m_Essential);
+    m_Elements.emplace_back(newButton);
+    return newButton;
+}

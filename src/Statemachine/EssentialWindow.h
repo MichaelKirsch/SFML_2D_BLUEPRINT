@@ -7,6 +7,7 @@ struct Style
 {
     sf::Color defaultColor ={80,80,80};
     sf::Color textColor ={217, 160, 76};
+    //unsigned int roundnessOfCorners = 4;
     unsigned int buttonHeight = 4;
 };
 

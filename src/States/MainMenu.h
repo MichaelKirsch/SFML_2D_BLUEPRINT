@@ -15,7 +15,7 @@ public:
 private:
     gui::Manager m_Gui;
     gui::Button* b2;
-
+    gui::Menu* m1;
 };
 
 
