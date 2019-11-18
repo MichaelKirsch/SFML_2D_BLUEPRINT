@@ -2,7 +2,7 @@
 
 MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential){
     b2 = m_Gui.addButton();
-    b2->setPositionOfTopLeft({8,8});
+    b2->setPositionOfCenter({50,8});
 }
 
 void MainMenu::handle_events() {

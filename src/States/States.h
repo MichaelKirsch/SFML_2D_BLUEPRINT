@@ -18,6 +18,4 @@ public:
 private:
     float time_left;
     sf::Text m_GoddbyeText;
-    sf::Font m_Font;
-    sf::Clock m_closingClock;
 };

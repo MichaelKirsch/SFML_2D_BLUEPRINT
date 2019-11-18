@@ -6,6 +6,7 @@ gui::Button::Button(EssentialWindow *es, sf::Vector2u pos, std::string text, uns
     this->m_Size = {width,m_Essential->m_GuiStyle.buttonHeight};
     this->isVisible = true;
     this->m_Pos = pos;
+    this->isCentered = false;
     this->m_Text.setFont(es->m_GlobFont);
     this->setTextColor(es->m_GuiStyle.textColor);
     this->setFillColor(es->m_GuiStyle.defaultColor);
@@ -57,18 +58,24 @@ void gui::Button::refactor() {
     m_Text.setCharacterSize(sizeInPixels.y); //textsize will be calculated by the rect size
     auto char_count = m_Text.getGlobalBounds().width+m_Text.getLineSpacing();
     m_Rect.setSize(sf::Vector2f(char_count,sizeInPixels.y*1.61));
+    auto rectSize = m_Rect.getGlobalBounds();
+    if(isCentered)
+    {
+        positionInPixels = sf::Vector2f(positionInPixels.x-(rectSize.width/2.0),sizeInPixels.y-(rectSize.height/2.0));
+    }
     m_Rect.setPosition(positionInPixels);
     m_Text.setPosition(positionInPixels);
 }
 
 void gui::Button::setPositionOfTopLeft(sf::Vector2u pos) {
     m_Pos = pos;
+    isCentered = false;
     refactor();
 }
 
 void gui::Button::setPositionOfCenter(sf::Vector2u pos) {
-    //TODO: here we will need some checks if the button is still inside the window bounds
-    //m_Pos = sf::Vector2u(pos.x-m_Size.x/2,pos.y-m_Size.y/2);
+    m_Pos = pos;
+    isCentered = true;
     refactor();
 }
 

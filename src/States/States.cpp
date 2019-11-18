@@ -13,7 +13,7 @@ Exiting::Exiting(EssentialWindow &Essential) : GameState(Essential) {
 }
 
 void Exiting::logic() {
-    time_left -= m_closingClock.restart().asSeconds();
+    time_left -= GameState::getRenderingTime(0)*100;
     std::string cl = "GOODBYE ";
     cl+= std::to_string(time_left);
     m_GoddbyeText.setString(cl);
