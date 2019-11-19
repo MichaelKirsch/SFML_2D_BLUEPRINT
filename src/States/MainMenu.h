@@ -14,8 +14,10 @@ public:
     void render() override;
 private:
     gui::Manager m_Gui;
-    gui::Button* b2;
+    gui::SimpleText* m_Text;
     gui::Menu* m1;
+    sf::RectangleShape m_BackgroudPic;
+    sf::Texture m_BackTexture;
 };
 
 

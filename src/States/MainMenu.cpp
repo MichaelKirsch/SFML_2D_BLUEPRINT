@@ -1,16 +1,20 @@
 #include "MainMenu.h"
 
 MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential){
-    b2 = m_Gui.addButton();
     m1 = m_Gui.addMenu();
+    m_Text = m_Gui.addSimpleText();
+    m_Text->setText("Hello World this is a Text");
+    m_Text->setPositionOfCenter({50,6});
     m1->createMenu({"Menu"},{"New Game","Load Game","Settings","Exit"});
-    b2->setPositionOfCenter({50,5});
-    b2->setVisible(false);
+    auto path_to_pic = std::experimental::filesystem::current_path().parent_path().string();
+    path_to_pic+="/data/Pics/90.jpg";
+    m_BackTexture.loadFromFile(path_to_pic);
+    m_BackgroudPic.setSize({(float)Essential.m_Window.getSize().x,(float)Essential.m_Window.getSize().y});
+    m_BackgroudPic.setTexture(&m_BackTexture);
 }
 
 void MainMenu::handle_events() {
     m_Gui.update();
-    b2->setText("one Frame takes:"+std::to_string(getRenderingTime(0))+" Seconds to load");
     if(m1->getButtonState("Exit"))
     {
         GameState::getGamestateEssential()->nextState = STATES::EXITING;
@@ -31,6 +35,7 @@ void MainMenu::logic() {
 
 void MainMenu::render() {
     getGamestateEssential()->m_Window.clear();
+    getGamestateEssential()->m_Window.draw(m_BackgroudPic);
     m_Gui.draw();
     getGamestateEssential()->m_Window.display();
 }

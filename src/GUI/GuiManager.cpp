@@ -28,3 +28,9 @@ gui::Menu *gui::Manager::addMenu() {
     m_Elements.emplace_back(newButton);
     return newButton;
 }
+
+gui::SimpleText *gui::Manager::addSimpleText() {
+    auto *newElement = new SimpleText(m_Essential);
+    m_Elements.emplace_back(newElement);
+    return newElement;
+}

@@ -4,6 +4,7 @@
 #include "Widgets/WidgetBase.h"
 #include "Widgets/Button.h"
 #include "Widgets/Menu.h"
+#include "Widgets/SimpleText.h"
 #include <experimental/filesystem>
 #include <string>
 #include <vector>
@@ -19,6 +20,7 @@ namespace gui
         ~Manager()=default;
         gui::Button* addButton();
         gui::Menu* addMenu();
+        gui::SimpleText* addSimpleText();
     private:
         EssentialWindow& m_Essential;
         std::vector<std::unique_ptr<Widget>> m_Elements;
