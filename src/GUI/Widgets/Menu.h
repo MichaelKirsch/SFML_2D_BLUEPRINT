@@ -14,9 +14,10 @@ namespace gui
         void draw();
         void update();
         void createMenu(std::string name, std::vector<std::string> buttons);
+        bool getButtonState(std::string buttonName);
     private:
         EssentialWindow* m_Essential;
-        std::map<std::string,std::unique_ptr<gui::Widget>> m_Elements;
+        std::map<std::string,std::unique_ptr<gui::Button>> m_Elements;
     };
 }
 

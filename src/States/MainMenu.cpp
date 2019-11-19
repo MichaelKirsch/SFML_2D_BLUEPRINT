@@ -3,13 +3,15 @@
 MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential){
     b2 = m_Gui.addButton();
     m1 = m_Gui.addMenu();
-    b2->setPositionOfCenter({50,8});
+    m1->createMenu({"Menu"},{"New Game","Load Game","Settings","Exit"});
+    b2->setPositionOfCenter({50,5});
+    b2->setVisible(false);
 }
 
 void MainMenu::handle_events() {
     m_Gui.update();
     b2->setText("one Frame takes:"+std::to_string(getRenderingTime(0))+" Seconds to load");
-    if(b2->isClicked())
+    if(m1->getButtonState("Exit"))
     {
         GameState::getGamestateEssential()->nextState = STATES::EXITING;
     }

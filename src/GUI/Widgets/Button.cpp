@@ -37,7 +37,9 @@ void gui::Button::update() {
 
 bool gui::Button::isClicked() {
     update();
-    return (mouseOver&&m_Essential->m_Mouse.isButtonPressed(sf::Mouse::Left));
+    if(isVisible)
+        return (mouseOver&&m_Essential->m_Mouse.isButtonPressed(sf::Mouse::Left));
+    return false;
 }
 
 void gui::Button::draw() {
@@ -61,7 +63,8 @@ void gui::Button::refactor() {
     auto rectSize = m_Rect.getGlobalBounds();
     if(isCentered)
     {
-        positionInPixels = sf::Vector2f(positionInPixels.x-(rectSize.width/2.0),sizeInPixels.y-(rectSize.height/2.0));
+        positionInPixels = sf::Vector2f(positionInPixels.x-(rectSize.width/2.0),positionInPixels.y-(rectSize.height/2.0));
+
     }
     m_Rect.setPosition(positionInPixels);
     m_Text.setPosition(positionInPixels);
