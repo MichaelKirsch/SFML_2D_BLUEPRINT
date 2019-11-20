@@ -19,8 +19,12 @@ namespace gui
         void update();
         ~Manager()=default;
         gui::Button* addButton();
+        gui::Button* addButton(std::string);
+        gui::Button* addButtonCentered(std::string,sf::Vector2u);
         gui::Menu* addMenu();
         gui::SimpleText* addSimpleText();
+        gui::SimpleText* addSimpleText(std::string);
+        gui::SimpleText* addSimpleTextCentered(std::string,sf::Vector2u);
     private:
         EssentialWindow& m_Essential;
         std::vector<std::unique_ptr<Widget>> m_Elements;

@@ -9,6 +9,7 @@ public:
     virtual void draw(){};
     virtual void update(){};
     bool isVisible = true;
+    bool isActive = true;
 };
 }
 

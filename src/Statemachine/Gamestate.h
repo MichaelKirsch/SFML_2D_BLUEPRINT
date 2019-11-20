@@ -11,6 +11,7 @@ public:
     float getRenderingTime(bool asFps);
     float getLogicTime(bool asFps);
     float getEventTime(bool asFps);
+    float getTotalFrameTime(){ return totalframetime;};
     void run();
 
     virtual void handle_events() {
@@ -30,6 +31,6 @@ public:
 private:
     EssentialWindow& m_Essential;
     float m_elapsed,timeNeededForRender,timeNeededForLogic,timeNeededForEvents;
-    float frame_cl,logic_cl,evt_cl,time_at_start,state_timer;
+    float frame_cl,logic_cl,evt_cl,time_at_start,state_timer,totalframetime;
 };
 

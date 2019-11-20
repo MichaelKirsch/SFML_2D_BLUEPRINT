@@ -22,22 +22,30 @@ void gui::Button::setFillColor(sf::Color newCol) {
 void gui::Button::update() {
     auto bounds = m_Rect.getGlobalBounds();
     auto mouse = m_Essential->m_Mouse.getPosition(m_Essential->m_Window);
-    if(mouse.x>bounds.left&&mouse.x<bounds.left+bounds.width&&mouse.y>bounds.top&&mouse.y<bounds.top+bounds.height)
+    if(mouse.x>bounds.left&&mouse.x<bounds.left+bounds.width&&mouse.y>bounds.top&&mouse.y<bounds.top+bounds.height&&isActive)
     {
         //mouse is inside the button
         mouseOver = true;
         m_Rect.setFillColor(m_MouseOver);
+        m_Text.setFillColor(m_Essential->m_GuiStyle.textColor);
+    }
+    else if(!isActive)
+    {
+        mouseOver = false;
+        m_Rect.setFillColor(m_Essential->m_GuiStyle.inactiveColor);
+        m_Text.setFillColor(m_Essential->m_GuiStyle.textColorInactive);
     }
     else
     {
         mouseOver = false;
         m_Rect.setFillColor(m_FillColor);
+        m_Text.setFillColor(m_Essential->m_GuiStyle.textColor);
     }
 }
 
 bool gui::Button::isClicked() {
     update();
-    if(isVisible)
+    if(isVisible&&isActive)
         return (mouseOver&&m_Essential->m_Mouse.isButtonPressed(sf::Mouse::Left));
     return false;
 }

@@ -33,6 +33,9 @@ void StateMachine::setState() {
             case STATES::EXITING:
                 uniquePtrState=std::make_unique<Exiting>(m_Essential);
                 break;
+            case STATES::CHOOSE_MAP:
+                uniquePtrState=std::make_unique<ChooseMap>(m_Essential);
+                break;
         }
         stateCurrentlySet = m_Essential.nextState;
     }

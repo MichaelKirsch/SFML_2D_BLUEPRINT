@@ -34,3 +34,33 @@ gui::SimpleText *gui::Manager::addSimpleText() {
     m_Elements.emplace_back(newElement);
     return newElement;
 }
+
+gui::Button *gui::Manager::addButton(std::string text) {
+    auto *newElement = new Button(&m_Essential);
+    newElement->setText(text);
+    m_Elements.emplace_back(newElement);
+    return newElement;
+}
+
+gui::Button *gui::Manager::addButtonCentered(std::string text, sf::Vector2u posCenter) {
+    auto *newElement = new Button(&m_Essential);
+    newElement->setText(text);
+    newElement->setPositionOfCenter(posCenter);
+    m_Elements.emplace_back(newElement);
+    return newElement;
+}
+
+gui::SimpleText *gui::Manager::addSimpleText(std::string text) {
+    auto *newElement = new SimpleText(m_Essential);
+    newElement->setText(text);
+    m_Elements.emplace_back(newElement);
+    return newElement;
+}
+
+gui::SimpleText *gui::Manager::addSimpleTextCentered(std::string text , sf::Vector2u pos) {
+    auto *newElement = new SimpleText(m_Essential);
+    newElement->setText(text);
+    newElement->setPositionOfCenter(pos);
+    m_Elements.emplace_back(newElement);
+    return newElement;
+}

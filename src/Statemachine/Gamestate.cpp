@@ -25,6 +25,8 @@ void GameState::run() {
             timeNeededForEvents = m_Essential.m_Clock.getElapsedTime().asSeconds();
             evt_cl=0;
         }
+
+        totalframetime = timeNeededForEvents+timeNeededForRender+timeNeededForLogic;
     }
 
 GameState::GameState(EssentialWindow &window) : m_Essential(window) {

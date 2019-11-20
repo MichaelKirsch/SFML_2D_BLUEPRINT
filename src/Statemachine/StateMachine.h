@@ -4,6 +4,7 @@
 #include <memory>
 #include "../States/States.h"
 #include "../States/MainMenu.h"
+#include "../States/ChooseMap.h"
 #include "Gamestate.h"
 #include "EssentialWindow.h"
 #include "StateEnum.h"
