@@ -18,7 +18,11 @@ private:
     int seed;
     int zoom = 1;
     void generateMap();
-
+    int octave = 9;
+    float frequency = 0.000003;
+    float lacuna = 1.6;
+    float gain = 2.1;
+    sf::CircleShape mouse_circle;
     EssentialWindow& m_Essential;
     gui::Manager m_GuiManager;
     gui::SimpleText* seedText;
@@ -28,6 +32,7 @@ private:
     gui::Button* zoomOut;
     gui::Button* useThisMap;
     gui::Button* backButton;
+    gui::Menu* map_playaround;
     sf::RectangleShape mapLining;
     sf::VertexArray m_VertexMap;
     FastNoise m_Noise;

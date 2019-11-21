@@ -8,7 +8,7 @@ StateMachine::StateMachine() {
     m_Essential.Framerate = 60;
     m_Essential.Updaterate = 40;
     m_Essential.Eventrate = 50;
-    m_Essential.m_GuiStyle.textColor=sf::Color::White;
+    m_Essential.m_GuiStyle.textColor={201, 165, 111};
     m_Essential.m_GuiStyle.defaultColor={45, 45, 42};
     stateCurrentlySet = STATES :: NONE;
     std::string path= std::experimental::filesystem::current_path().parent_path().string();
