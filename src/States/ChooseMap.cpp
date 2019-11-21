@@ -4,6 +4,7 @@
 
 ChooseMap::ChooseMap(EssentialWindow &es) : GameState(es),m_Essential(es),m_GuiManager(es) {
     m_Essential.m_Music.stop();
+    ChosenRegion = m_GuiManager.addSimpleTextCentered("You Chose:"+std::to_string(position_in_map.x)+"|"+std::to_string(position_in_map.y),{80,20});
     map_playaround = m_GuiManager.addMenu();
     map_playaround->createMenu("msun",{"Freq+","Freq-","Oct+","Oct-","Lacu+","Lacu-","Gain+","Gain-"},5);
     zoomIn = m_GuiManager.addButtonCentered("Zoom +",{40,95});
@@ -25,12 +26,21 @@ ChooseMap::ChooseMap(EssentialWindow &es) : GameState(es),m_Essential(es),m_GuiM
     mouse_circle.setFillColor(sf::Color(255,0,0,100));
     auto circle_size = mouse_circle.getRadius();
     mouse_circle.setOrigin(circle_size/2,circle_size/2);
-    map_playaround->isVisible= false;
-    map_playaround->isActive = false;
+    map_playaround->isVisible= true;
+    map_playaround->isActive = true;
     generateMap();
 }
 
 void ChooseMap::handle_events() {
+    if(position_in_map==sf::Vector2i(0,0))
+    {
+        useThisMap->setActive(false);
+    }
+    else
+    {
+        useThisMap->setActive(true);
+    }
+
     m_GuiManager.update();
     if(backButton->isClicked())
     {
@@ -61,7 +71,11 @@ void ChooseMap::handle_events() {
         if(mousepos.y>bounds.top&&mousepos.y<bounds.top+bounds.height)
         {
             if(m_Essential.m_Mouse.isButtonPressed(sf::Mouse::Left))
+            {
                 mouse_circle.setPosition(mousepos.x,mousepos.y);
+                position_in_map = mousepos;
+                ChosenRegion->setText("You Chose:"+std::to_string(position_in_map.x)+"|"+std::to_string(position_in_map.y));
+            }
         }
     }
 

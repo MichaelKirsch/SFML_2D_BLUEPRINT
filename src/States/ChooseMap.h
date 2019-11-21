@@ -16,6 +16,7 @@ public:
 
 private:
     int seed;
+    sf::Vector2i position_in_map = {0,0};
     int zoom = 1;
     void generateMap();
     int octave = 9;
@@ -26,6 +27,7 @@ private:
     EssentialWindow& m_Essential;
     gui::Manager m_GuiManager;
     gui::SimpleText* seedText;
+    gui::SimpleText* ChosenRegion;
     gui::SimpleText* introduction;
     gui::Button* nextMap;
     gui::Button* zoomIn;
