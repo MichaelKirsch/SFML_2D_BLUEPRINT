@@ -1,6 +1,8 @@
 #pragma once
 
 #include "SFML/Graphics.hpp"
+#include "SFML/System.hpp"
+#include <SFML/Audio.hpp>
 #include "../Statemachine/StateEnum.h"
 
 struct Style
@@ -23,5 +25,11 @@ class EssentialWindow
         sf::Mouse m_Mouse;
         sf::Font m_GlobFont;
         Style m_GuiStyle;
+        sf::Music m_Music;
+        std::string m_PathToParent = "";
         float Framerate, Updaterate, Eventrate;
+        sf::Vector2f getPixelValues(sf::Vector2f percentages)
+        {
+            return {(m_Window.getSize().x/100)*percentages.x,(m_Window.getSize().y/100)*percentages.y};
+        }
 };

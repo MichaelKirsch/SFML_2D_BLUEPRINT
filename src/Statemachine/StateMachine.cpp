@@ -12,6 +12,7 @@ StateMachine::StateMachine() {
     m_Essential.m_GuiStyle.defaultColor={45, 45, 42};
     stateCurrentlySet = STATES :: NONE;
     std::string path= std::experimental::filesystem::current_path().parent_path().string();
+    m_Essential.m_PathToParent = path;
     path+="/data/Font/Ubuntu-R.ttf";
     if(!m_Essential.m_GlobFont.loadFromFile(path))
     {

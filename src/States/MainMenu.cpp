@@ -9,6 +9,7 @@ MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Esse
     auto path_to_pic = std::experimental::filesystem::current_path().parent_path().string();
     path_to_pic+="/data/Pics/90.jpg";
     m_BackTexture.loadFromFile(path_to_pic);
+    Essential.m_Music.openFromFile(Essential.m_PathToParent+"/data/Music/Olympus.ogg");
     m_BackgroudPic.setSize({(float)Essential.m_Window.getSize().x,(float)Essential.m_Window.getSize().y});
     m_BackgroudPic.setTexture(&m_BackTexture);
 }
