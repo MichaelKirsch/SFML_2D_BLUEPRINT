@@ -6,7 +6,7 @@ ChooseMap::ChooseMap(EssentialWindow &es) : GameState(es),m_Essential(es),m_GuiM
     m_Essential.m_Music.stop();
     ChosenRegion = m_GuiManager.addSimpleTextCentered("You Chose:"+std::to_string(position_in_map.x)+"|"+std::to_string(position_in_map.y),{80,20});
     map_playaround = m_GuiManager.addMenu();
-    map_playaround->createMenu("msun",{"Freq+","Freq-","Oct+","Oct-","Lacu+","Lacu-","Gain+","Gain-"},5);
+    map_playaround->createMenu("msun",{"Freq+","Freq-","Oct+","Oct-","Lacu+","Lacu-","Gain+","Gain-","Factor+","Factor-"},5);
     zoomIn = m_GuiManager.addButtonCentered("Zoom +",{40,95});
     zoomOut = m_GuiManager.addButtonCentered("Zoom -",{30,95});
     introduction = m_GuiManager.addSimpleTextCentered("Choose your starting region",{50,4});
@@ -16,7 +16,6 @@ ChooseMap::ChooseMap(EssentialWindow &es) : GameState(es),m_Essential(es),m_GuiM
     srand(time(0));
     seed = rand();
     m_Noise.SetNoiseType(FastNoise::SimplexFractal);
-
     seedText = m_GuiManager.addSimpleTextCentered("Seed:"+std::to_string(seed),{80,50+5*m_Essential.m_GuiStyle.buttonHeight});
     mapLining.setPosition(m_Essential.getPixelValues({10,10}));
     auto size_box = m_Essential.getPixelValues({80,80});
@@ -28,7 +27,7 @@ ChooseMap::ChooseMap(EssentialWindow &es) : GameState(es),m_Essential(es),m_GuiM
     mouse_circle.setOrigin(circle_size/2,circle_size/2);
     map_playaround->isVisible= true;
     map_playaround->isActive = true;
-    generateMap();
+
 }
 
 void ChooseMap::handle_events() {
@@ -81,12 +80,12 @@ void ChooseMap::handle_events() {
 
     if(map_playaround->getButtonState("Freq+"))
     {
-       frequency+= 0.000001;
+       frequency+= 0.001;
        generateMap();
     }
     if(map_playaround->getButtonState("Freq-"))
     {
-        frequency-= 0.000001;
+        frequency-= 0.001;
         generateMap();
     }
 
@@ -124,6 +123,19 @@ void ChooseMap::handle_events() {
         generateMap();
     }
 
+    if(map_playaround->getButtonState("Factor+"))
+    {
+        factor+=0.5;
+        generateMap();
+    }
+
+    if(map_playaround->getButtonState("Factor-"))
+    {
+        factor-=0.5;
+        generateMap();
+    }
+
+
     sf::Event m_Event;
     while (getGamestateEssential()->m_Window.pollEvent(m_Event))
     {
@@ -155,7 +167,7 @@ void ChooseMap::generateMap() {
     auto virtual_zero_pos = mapLining.getPosition();
     auto bounds = mapLining.getGlobalBounds();
     m_VertexMap.clear();
-    m_VertexMap.resize(((size_box.x*size_box.y)*4)/zoom);
+    m_VertexMap.resize(((size_box.x*size_box.y)*4));
     m_VertexMap.setPrimitiveType(sf::Quads);
     m_Noise.SetSeed(seed);
     m_Noise.SetFrequency(frequency);
@@ -163,53 +175,47 @@ void ChooseMap::generateMap() {
     m_Noise.SetFractalOctaves(octave);
     m_Noise.SetFractalGain(gain);
 
-    for(int x =0;x<bounds.width/zoom;x++) {
-        for (int i = 0; i < bounds.height / zoom; i++) {
-            float val = m_Noise.GetNoise((100000 / bounds.height) * x, (100000 / bounds.height) * i);
-            if (val > max)
-                max = val;
-            if (val < min)
-                min = val;
-        }
-    }
-    for(int x =0;x<bounds.width/zoom;x++)
+    for(int x =0;x<bounds.width/2;x++)
     {
-        for (int i = 0; i < bounds.height/zoom; i++) {
-            int index = ((x*bounds.height/zoom)+i)*4;
-            m_VertexMap[index].position = sf::Vector2f(virtual_zero_pos.x+x*zoom,virtual_zero_pos.y+i*zoom);
-            m_VertexMap[index+1].position = sf::Vector2f(virtual_zero_pos.x+(x+1)*zoom, virtual_zero_pos.y+i*zoom);
-            m_VertexMap[index+2].position = sf::Vector2f(virtual_zero_pos.x+(x+1)*zoom, virtual_zero_pos.y+(i+1)*zoom);
-            m_VertexMap[index+3].position = sf::Vector2f(virtual_zero_pos.x+x*zoom, virtual_zero_pos.y+(i+1)*zoom);
+        for (int i = 0; i < bounds.height/2; i++) {
+            int index = ((x*bounds.height)+i)*4;
+            m_VertexMap[index].position = sf::Vector2f(virtual_zero_pos.x+x*2,virtual_zero_pos.y+i*2);
+            m_VertexMap[index+1].position = sf::Vector2f(virtual_zero_pos.x+(x+1)*2, virtual_zero_pos.y+i*2);
+            m_VertexMap[index+2].position = sf::Vector2f(virtual_zero_pos.x+(x+1)*2, virtual_zero_pos.y+(i+1)*2);
+            m_VertexMap[index+3].position = sf::Vector2f(virtual_zero_pos.x+x*2, virtual_zero_pos.y+(i+1)*2);
 
-            float val = m_Noise.GetNoise((100000/bounds.height)*x,(100000/bounds.height)*i);
-            if(val<0.0)
-                val=0.0;
+            auto noise1 = m_Noise.GetNoise(((worldSizeInBlocks/zoom)/bounds.width)*x,((worldSizeInBlocks/zoom)/bounds.height)*i);
+            float val = noise1;
             sf::Color col;
-            int color = val*10;
-            switch (color)
+            int  coloring_val = val*10;
+            switch (coloring_val)
             {
-                case 0:
-                    col = {0, 136, 255};
+                default:
+                    col = {5, 79, 158};
                     break;
-
                 case 1:
-                    col = {118, 185, 245};
+                    col = {135, 173, 68};
                     break;
-
                 case 2:
-                    col = {245, 205, 118};
+                    col = {69, 135, 3};
                     break;
-
                 case 3:
+                    col = {23, 135, 3};
+                    break;
                 case 4:
-                    col = {0, 133, 24};
+                    col = {0, 77, 1};
                     break;
                 case 5:
-                    col = {94, 94, 94};
+                    col = {62, 77, 0};
                     break;
-                default:
-                    col = {207, 207, 207};
+                case 6:
+                    col = {32, 54, 1};
+                    break;
+                case 7:
+                    col = {48, 42, 21};
+                    break;
             }
+
             m_VertexMap[index].color = col;
             m_VertexMap[index+1].color = col;
             m_VertexMap[index+2].color = col;

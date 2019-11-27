@@ -16,13 +16,15 @@ public:
 
 private:
     int seed;
-    sf::Vector2i position_in_map = {0,0};
+    sf::Vector2i position_in_map = {50,50};
     int zoom = 1;
     void generateMap();
     int octave = 9;
-    float frequency = 0.000003;
-    float lacuna = 1.6;
+    float frequency = 0.2;
+    float lacuna = 0.4;
     float gain = 2.1;
+    float factor = 3.0;
+    int worldSizeInBlocks = 100000;
     sf::CircleShape mouse_circle;
     EssentialWindow& m_Essential;
     gui::Manager m_GuiManager;
@@ -38,6 +40,7 @@ private:
     sf::RectangleShape mapLining;
     sf::VertexArray m_VertexMap;
     FastNoise m_Noise;
+    FastNoise m_Subnoise;
 };
 
 
