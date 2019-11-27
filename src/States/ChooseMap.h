@@ -16,7 +16,8 @@ public:
 
 private:
     int seed;
-    sf::Vector2i position_in_map = {50,50};
+    int worldSizeInBlocks = 100000;
+    sf::Vector2i position_in_map = {0,0};
     int zoom = 1;
     void generateMap();
     int octave = 9;
@@ -24,7 +25,6 @@ private:
     float lacuna = 0.4;
     float gain = 2.1;
     float factor = 3.0;
-    int worldSizeInBlocks = 100000;
     sf::CircleShape mouse_circle;
     EssentialWindow& m_Essential;
     gui::Manager m_GuiManager;

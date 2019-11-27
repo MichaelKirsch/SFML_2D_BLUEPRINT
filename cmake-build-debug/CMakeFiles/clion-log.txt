@@ -1,0 +1,6 @@
+"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT
+-- Found SFML 2.5.1 in C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/libs/SFML-2.5.1/lib/cmake/SFML
+-- Found TGUI 0.8.6 in C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/libs/TGUI-0.8/lib/cmake/TGUI
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug
