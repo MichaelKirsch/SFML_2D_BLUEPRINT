@@ -182,10 +182,24 @@ CMakeFiles/INSERT_NAME.dir/src/States/States.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/INSERT_NAME.dir/src/States/States.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~2.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\src\States\States.cpp -o CMakeFiles\INSERT_NAME.dir\src\States\States.cpp.s
 
+CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.obj: CMakeFiles/INSERT_NAME.dir/flags.make
+CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.obj: CMakeFiles/INSERT_NAME.dir/includes_CXX.rsp
+CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.obj: ../src/World/Worldgenerator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~2.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\INSERT_NAME.dir\src\World\Worldgenerator.cpp.obj -c C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\src\World\Worldgenerator.cpp
+
+CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~2.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\src\World\Worldgenerator.cpp > CMakeFiles\INSERT_NAME.dir\src\World\Worldgenerator.cpp.i
+
+CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~2.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\src\World\Worldgenerator.cpp -o CMakeFiles\INSERT_NAME.dir\src\World\Worldgenerator.cpp.s
+
 CMakeFiles/INSERT_NAME.dir/main.cpp.obj: CMakeFiles/INSERT_NAME.dir/flags.make
 CMakeFiles/INSERT_NAME.dir/main.cpp.obj: CMakeFiles/INSERT_NAME.dir/includes_CXX.rsp
 CMakeFiles/INSERT_NAME.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/INSERT_NAME.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/INSERT_NAME.dir/main.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~2.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\INSERT_NAME.dir\main.cpp.obj -c C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\main.cpp
 
 CMakeFiles/INSERT_NAME.dir/main.cpp.i: cmake_force
@@ -199,7 +213,7 @@ CMakeFiles/INSERT_NAME.dir/main.cpp.s: cmake_force
 CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.obj: CMakeFiles/INSERT_NAME.dir/flags.make
 CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.obj: CMakeFiles/INSERT_NAME.dir/includes_CXX.rsp
 CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.obj: ../libs/FastNoise/FastNoise.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~2.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\INSERT_NAME.dir\libs\FastNoise\FastNoise.cpp.obj -c C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\libs\FastNoise\FastNoise.cpp
 
 CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.i: cmake_force
@@ -221,6 +235,7 @@ INSERT_NAME_OBJECTS = \
 "CMakeFiles/INSERT_NAME.dir/src/States/ChooseMap.cpp.obj" \
 "CMakeFiles/INSERT_NAME.dir/src/States/MainMenu.cpp.obj" \
 "CMakeFiles/INSERT_NAME.dir/src/States/States.cpp.obj" \
+"CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.obj" \
 "CMakeFiles/INSERT_NAME.dir/main.cpp.obj" \
 "CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.obj"
 
@@ -236,6 +251,7 @@ INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/src/Statemachine/StateMachine.cpp.ob
 INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/src/States/ChooseMap.cpp.obj
 INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/src/States/MainMenu.cpp.obj
 INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/src/States/States.cpp.obj
+INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.obj
 INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/main.cpp.obj
 INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.obj
 INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/build.make
@@ -247,7 +263,7 @@ INSERT_NAME.exe: ../libs/TGUI-0.8/lib/libtgui-d.a
 INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/linklibs.rsp
 INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/objects1.rsp
 INSERT_NAME.exe: CMakeFiles/INSERT_NAME.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable INSERT_NAME.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable INSERT_NAME.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\INSERT_NAME.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

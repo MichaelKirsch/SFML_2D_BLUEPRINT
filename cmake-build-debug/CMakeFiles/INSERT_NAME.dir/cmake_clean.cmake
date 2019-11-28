@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/INSERT_NAME.dir/src/States/ChooseMap.cpp.obj"
   "CMakeFiles/INSERT_NAME.dir/src/States/MainMenu.cpp.obj"
   "CMakeFiles/INSERT_NAME.dir/src/States/States.cpp.obj"
+  "CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.obj"
   "CMakeFiles/INSERT_NAME.dir/main.cpp.obj"
   "CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.obj"
   "INSERT_NAME.pdb"

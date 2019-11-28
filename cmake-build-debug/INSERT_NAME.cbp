@@ -151,6 +151,12 @@
 		<Unit filename="C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/States/States.h">
 			<Option target="INSERT_NAME"/>
 		</Unit>
+		<Unit filename="C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/World/Worldgenerator.cpp">
+			<Option target="INSERT_NAME"/>
+		</Unit>
+		<Unit filename="C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/World/Worldgenerator.h">
+			<Option target="INSERT_NAME"/>
+		</Unit>
 		<Unit filename="C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

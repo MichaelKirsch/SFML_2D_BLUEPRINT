@@ -419,6 +419,33 @@ src/States/States.cpp.s:
 	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/States.cpp.s
 .PHONY : src/States/States.cpp.s
 
+src/World/Worldgenerator.obj: src/World/Worldgenerator.cpp.obj
+
+.PHONY : src/World/Worldgenerator.obj
+
+# target to build an object file
+src/World/Worldgenerator.cpp.obj:
+	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.obj
+.PHONY : src/World/Worldgenerator.cpp.obj
+
+src/World/Worldgenerator.i: src/World/Worldgenerator.cpp.i
+
+.PHONY : src/World/Worldgenerator.i
+
+# target to preprocess a source file
+src/World/Worldgenerator.cpp.i:
+	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.i
+.PHONY : src/World/Worldgenerator.cpp.i
+
+src/World/Worldgenerator.s: src/World/Worldgenerator.cpp.s
+
+.PHONY : src/World/Worldgenerator.s
+
+# target to generate assembly for a file
+src/World/Worldgenerator.cpp.s:
+	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.s
+.PHONY : src/World/Worldgenerator.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -461,6 +488,9 @@ help:
 	@echo ... src/States/States.obj
 	@echo ... src/States/States.i
 	@echo ... src/States/States.s
+	@echo ... src/World/Worldgenerator.obj
+	@echo ... src/World/Worldgenerator.i
+	@echo ... src/World/Worldgenerator.s
 .PHONY : help
 
 

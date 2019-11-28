@@ -2,11 +2,12 @@
 
 
 StateMachine::StateMachine() {
-    m_Essential.m_Window.create(sf::VideoMode(1600,900),"Hello");
+    m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),"A new World");
+
     m_Essential.m_Window.clear(sf::Color::Black);
     m_Essential.m_Window.display();
     m_Essential.Framerate = 60;
-    m_Essential.Updaterate = 40;
+    m_Essential.Updaterate = 30;
     m_Essential.Eventrate = 50;
     m_Essential.m_GuiStyle.textColor={201, 165, 111};
     m_Essential.m_GuiStyle.defaultColor={45, 45, 42};
@@ -19,7 +20,10 @@ StateMachine::StateMachine() {
         std::cout<<"FONT DIDNT LOAD"<<std::endl;
     }
     m_Essential.nextState = STATES::MENU; //we want to start with the menu
-    setState();
+    sf::Image icon;
+    icon.loadFromFile(m_Essential.m_PathToParent+"/data/Pics/icon.png"); // File/Image/Pixel
+    m_Essential.m_Window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+
 }
 
 
