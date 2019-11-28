@@ -30,6 +30,7 @@ public:
 
 private:
     EssentialWindow& m_Essential;
+    bool init = false;
     float m_elapsed,timeNeededForRender,timeNeededForLogic,timeNeededForEvents;
     float frame_cl,logic_cl,evt_cl,time_at_start,state_timer,totalframetime;
 };

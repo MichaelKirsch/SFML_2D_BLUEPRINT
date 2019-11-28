@@ -5,6 +5,9 @@
 #include "../Statemachine/Gamestate.h"
 #include "../GUI/GuiManager.h"
 #include "FastNoise.h"
+#include "../World/Worldgenerator.h"
+
+#define DEBUG 1
 
 class ChooseMap : public GameState {
 public:
@@ -15,22 +18,28 @@ public:
     ~ChooseMap()= default;
 
 private:
+    bool initialiced = false;
+    void init();
+    Worldgenerator m_WorldGen;
     int seed;
+    sf::Vector2i position_in_map = {0,0};
     int zoom = 1;
     void generateMap();
-
+    int worldSizeInBlocks = 100000;
+    sf::RectangleShape mouse_circle;
     EssentialWindow& m_Essential;
     gui::Manager m_GuiManager;
-    gui::SimpleText* seedText;
-    gui::SimpleText* introduction;
-    gui::Button* nextMap;
-    gui::Button* zoomIn;
-    gui::Button* zoomOut;
-    gui::Button* useThisMap;
-    gui::Button* backButton;
+    gui::SimpleText* seedText= nullptr;
+    gui::SimpleText* ChosenRegion= nullptr;
+    gui::Button* nextMap= nullptr;
+    gui::Button* spawnOnLand = nullptr;
+    gui::Button* zoomIn= nullptr;
+    gui::Button* zoomOut= nullptr;
+    gui::Button* useThisMap= nullptr;
+    gui::Button* backButton= nullptr;
+    gui::Menu* map_playaround= nullptr;
     sf::RectangleShape mapLining;
     sf::VertexArray m_VertexMap;
-    FastNoise m_Noise;
 };
 
 

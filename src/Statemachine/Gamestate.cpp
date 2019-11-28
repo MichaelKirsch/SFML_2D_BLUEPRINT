@@ -7,25 +7,35 @@ void GameState::run() {
         frame_cl+=m_elapsed;
         logic_cl+=m_elapsed;
         evt_cl+=m_elapsed;
-        if(frame_cl>1.0/m_Essential.Framerate)
-        {
-            render();
-            timeNeededForRender = m_Essential.m_Clock.getElapsedTime().asSeconds();
-            frame_cl=0;
-        }
-        if(logic_cl>1.0/m_Essential.Updaterate)
-        {
-            logic();
-            timeNeededForLogic = m_Essential.m_Clock.getElapsedTime().asSeconds();
-            logic_cl=0;
-        }
-        if(evt_cl>1.0/m_Essential.Eventrate)
-        {
-            handle_events();
-            timeNeededForEvents = m_Essential.m_Clock.getElapsedTime().asSeconds();
-            evt_cl=0;
-        }
 
+    if(!init)
+    {
+        logic();
+        handle_events();
+        render();
+        init= true;
+    }
+
+    if(logic_cl>1.0/m_Essential.Updaterate)
+    {
+        logic();
+        timeNeededForLogic = m_Essential.m_Clock.getElapsedTime().asSeconds();
+        logic_cl=0;
+    }
+
+    if(evt_cl>1.0/m_Essential.Eventrate)
+    {
+        handle_events();
+        timeNeededForEvents = m_Essential.m_Clock.getElapsedTime().asSeconds();
+        evt_cl=0;
+    }
+
+    if(frame_cl>1.0/m_Essential.Framerate)
+    {
+        render();
+        timeNeededForRender = m_Essential.m_Clock.getElapsedTime().asSeconds();
+        frame_cl=0;
+    }
         totalframetime = timeNeededForEvents+timeNeededForRender+timeNeededForLogic;
     }
 

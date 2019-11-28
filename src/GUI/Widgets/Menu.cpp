@@ -19,14 +19,14 @@ void gui::Menu::update() {
     }
 }
 
-void gui::Menu::createMenu(std::string name, std::vector<std::string> buttons) {
+void gui::Menu::createMenu(std::string name, std::vector<std::string> buttons, unsigned int x_center_line_pos) {
     auto screenPercentageUsedByButtonsAndSpaces = m_Essential->m_GuiStyle.buttonHeight*((2*buttons.size())-1);
     auto topAndBottomSpace = 100-screenPercentageUsedByButtonsAndSpaces;
     int middleOfFirstButton = (topAndBottomSpace/2)+(m_Essential->m_GuiStyle.buttonHeight*0.5);
     int index = 0;
     for(auto& bu:buttons)
     {
-        sf::Vector2u position = {50,middleOfFirstButton+(2*index*m_Essential->m_GuiStyle.buttonHeight)};
+        sf::Vector2u position = {x_center_line_pos,middleOfFirstButton+(2*index*m_Essential->m_GuiStyle.buttonHeight)};
         auto Buffer = new Button(m_Essential,position,bu);
         Buffer->setText(bu);
         Buffer->setPositionOfCenter(position);
@@ -44,5 +44,16 @@ bool gui::Menu::getButtonState(std::string buttonName) {
     {
         return false;
     }
+}
+
+std::string gui::Menu::getPressedButton() {
+    for(auto& el:m_Elements)
+    {
+        if(el.second->isClicked())
+        {
+            return el.first;
+        }
+    }
+    return "none";
 }
 
