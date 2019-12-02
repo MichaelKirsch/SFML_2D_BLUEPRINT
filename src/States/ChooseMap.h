@@ -33,11 +33,8 @@ private:
     gui::SimpleText* ChosenRegion= nullptr;
     gui::Button* nextMap= nullptr;
     gui::Button* spawnOnLand = nullptr;
-    gui::Button* zoomIn= nullptr;
-    gui::Button* zoomOut= nullptr;
     gui::Button* useThisMap= nullptr;
     gui::Button* backButton= nullptr;
-    gui::Menu* map_playaround= nullptr;
     sf::RectangleShape mapLining;
     sf::VertexArray m_VertexMap;
 };

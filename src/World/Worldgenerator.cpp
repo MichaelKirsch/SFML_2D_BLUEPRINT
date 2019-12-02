@@ -39,10 +39,19 @@ int Worldgenerator::getHeight(sf::Vector2i pos)
 }
 
 void Worldgenerator::writeValues() {
+    //world noise
     m_Noise.SetNoiseType(FastNoise::CubicFractal);
     m_Noise.SetFrequency(m_Noise_Frequency);
     m_Noise.SetSeed(m_Seed);
     m_Noise.SetFractalOctaves(m_Noise_Octave);
     m_Noise.SetFractalGain(m_Noise_Gain);
     m_Noise.SetFractalLacunarity(m_Noise_Lacuna);
+
+    //tree noise
+    m_TreeNoise.SetNoiseType(FastNoise::Cellular);
+    m_TreeNoise.SetSeed(m_Seed);
+}
+
+TILE_TYPE Worldgenerator::getBlockID(sf::Vector2i pos) {
+
 }

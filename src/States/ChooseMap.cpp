@@ -12,10 +12,6 @@ void ChooseMap::init() {
 
     seedText = m_GuiManager.addSimpleTextCentered("Seed:"+std::to_string(seed),{80,50+5*m_Essential.m_GuiStyle.buttonHeight});
     ChosenRegion = m_GuiManager.addSimpleTextCentered("You Chose:"+std::to_string(position_in_map.x)+"|"+std::to_string(position_in_map.y),{80,20});
-    map_playaround = m_GuiManager.addMenu();
-    map_playaround->createMenu("msun",{"Freq+","Freq-","Oct+","Oct-","Lacu+","Lacu-","Gain+","Gain-","Factor+","Factor-"},5);
-    zoomIn = m_GuiManager.addButtonCentered("Zoom +",{40,95});
-    zoomOut = m_GuiManager.addButtonCentered("Zoom -",{30,95});
     nextMap = m_GuiManager.addButtonCentered("Generate new Map",{80,50-2*m_Essential.m_GuiStyle.buttonHeight});
     useThisMap = m_GuiManager.addButtonCentered("Start the game on Ship",{80,50});
     spawnOnLand = m_GuiManager.addButtonCentered("Start the game on Land",{80,50+2*m_Essential.m_GuiStyle.buttonHeight});
@@ -31,7 +27,6 @@ void ChooseMap::init() {
     mouse_circle.setOrigin(circle_size.x/2,circle_size.y/2);
     if(DEBUG == 1)
     {
-        map_playaround->setActive(0);
         seedText->setActive(0);
     }
     generateMap();
@@ -58,18 +53,6 @@ void ChooseMap::handle_events() {
         {
             seed = rand();
             seedText->setText("Seed:"+std::to_string(seed));
-            generateMap();
-        }
-        if(zoomIn->isClicked())
-        {
-            zoom+=2;
-            generateMap();
-        }
-        if(zoomOut->isClicked())
-        {
-            zoom-=2;
-            if(zoom<1)
-                zoom =1;
             generateMap();
         }
         auto mousepos = m_Essential.m_Mouse.getPosition(m_Essential.m_Window);

@@ -121,6 +121,12 @@
 		<Unit filename="C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/GUI/Widgets/SimpleText.h">
 			<Option target="INSERT_NAME"/>
 		</Unit>
+		<Unit filename="C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/Rendering/Renderer.cpp">
+			<Option target="INSERT_NAME"/>
+		</Unit>
+		<Unit filename="C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/Rendering/Renderer.h">
+			<Option target="INSERT_NAME"/>
+		</Unit>
 		<Unit filename="C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/Statemachine/Gamestate.cpp">
 			<Option target="INSERT_NAME"/>
 		</Unit>

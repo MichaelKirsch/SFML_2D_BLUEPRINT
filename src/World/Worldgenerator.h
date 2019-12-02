@@ -6,6 +6,7 @@
 #include "FastNoise.h"
 #include "iostream"
 #include <math.h>
+#include "Tile-Enum.h"
 
 class Worldgenerator {
 public:
@@ -27,6 +28,7 @@ public:
     void setOctaves(int octave){m_Noise_Octave=octave;writeValues();};
     void setFrequency(float freq){m_Noise_Frequency = freq;writeValues();};
     int getHeight(sf::Vector2i pos);
+    TILE_TYPE getBlockID(sf::Vector2i pos);
     ~Worldgenerator() = default;
 
 private:
@@ -36,6 +38,7 @@ private:
     float m_Noise_Gain = 5.0;//standard value
     int m_savetyZone =5;
     FastNoise m_Noise;
+    FastNoise m_TreeNoise;
     int m_Worldsize = 100000;
     int m_Seed = 199;
 };

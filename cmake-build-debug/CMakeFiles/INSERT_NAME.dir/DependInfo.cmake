@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/GUI/Widgets/Button.cpp" "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/Button.cpp.obj"
   "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/GUI/Widgets/Menu.cpp" "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/Menu.cpp.obj"
   "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/GUI/Widgets/SimpleText.cpp" "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/SimpleText.cpp.obj"
+  "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/Rendering/Renderer.cpp" "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/INSERT_NAME.dir/src/Rendering/Renderer.cpp.obj"
   "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/Statemachine/Gamestate.cpp" "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/INSERT_NAME.dir/src/Statemachine/Gamestate.cpp.obj"
   "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/Statemachine/StateMachine.cpp" "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/INSERT_NAME.dir/src/Statemachine/StateMachine.cpp.obj"
   "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/src/States/ChooseMap.cpp" "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/INSERT_NAME.dir/src/States/ChooseMap.cpp.obj"
