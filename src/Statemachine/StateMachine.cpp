@@ -43,7 +43,7 @@ void StateMachine::setState() {
     }
 }
 
-void StateMachine::dropIntoState(STATES dropInto) {
+void StateMachine::dispatch(STATES dropInto) {
     m_Essential.nextState = dropInto;
     while(m_Essential.nextState != STATES::CLOSING)
     {

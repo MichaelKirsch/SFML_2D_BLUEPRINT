@@ -11,7 +11,9 @@ namespace gui
     class SimpleText : public Widget {
     public:
         SimpleText(EssentialWindow& es);
+        void setSize(int size);
         void setText(std::string text);
+        void setTextColor(sf::Color colorToSet);
         void draw();
         void setPositionOfCenter(sf::Vector2u);
         ~SimpleText()= default;
