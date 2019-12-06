@@ -1,3 +1,0 @@
-C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/CAESAR-2D.dir
-C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -250,6 +250,9 @@ SFML_DIR:PATH=SFML_DIR-NOTFOUND
 //Path to a file.
 SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
 
+//The directory containing a CMake configuration file for TGUI.
+TGUI_DIR:PATH=TGUI_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries
