@@ -26,6 +26,7 @@ void GameState::run() {
     if(evt_cl>1.0/m_Essential.Eventrate)
     {
         handle_events();
+        GameState::handle_events();
         timeNeededForEvents = m_Essential.m_Clock.getElapsedTime().asSeconds();
         evt_cl=0;
     }

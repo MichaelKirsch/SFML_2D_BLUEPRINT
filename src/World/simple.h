@@ -14,6 +14,20 @@ private:
     sf::Texture m_text;
 };
 
+struct tile_tex_coords
+{
+    sf::Vector2f co1,co2,co3,co4;
+};
+
+class tilemap_loader
+{
+public:
+    tilemap_loader()= default;
+    void load_map(std::string path,sf::Vector2u amount_tiles, sf::Vector2u tilesize ,sf::Vector2f offset_tileset,bool isometric_tile= true);
+    tile_tex_coords getTile(sf::Vector2u posInTilemap);
+    ~tilemap_loader()=default;
+};
+
 class simple {
 public:
     simple();

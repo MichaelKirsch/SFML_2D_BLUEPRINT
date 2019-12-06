@@ -28,3 +28,7 @@ void Exiting::render() {
     GameState::getGamestateEssential()->m_Window.draw(m_test.map,&m_test.m_text);
     GameState::getGamestateEssential()->m_Window.display();
 }
+
+void Exiting::handle_events() {
+
+}

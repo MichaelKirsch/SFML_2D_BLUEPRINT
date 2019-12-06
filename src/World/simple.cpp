@@ -18,11 +18,11 @@ void simple:: drawTile(float x, float y, int pos, float tilesize,sf::Color col) 
     map[pos+1].position = sf::Vector2f{center.x+(tilewidth/2.f),center.y};
     map[pos+2].position = sf::Vector2f{center.x,center.y+(tileheight/2.f)};
     map[pos+3].position = sf::Vector2f{center.x-(tilewidth/2.f),center.y};
-
-    map[pos].texCoords = sf::Vector2f{center.x,center.y-(tileheight/2.f)};
-    map[pos+1].texCoords = sf::Vector2f{center.x+(tilewidth/2.f),center.y};
-    map[pos+2].texCoords = sf::Vector2f{center.x,center.y+(tileheight/2.f)};
-    map[pos+3].texCoords = sf::Vector2f{center.x-(tilewidth/2.f),center.y};
+    center = {32,16};
+    map[pos].texCoords = sf::Vector2f(150.f, 0.f);
+    map[pos+1].texCoords = sf::Vector2f(300.f, 75.f);
+    map[pos+2].texCoords = sf::Vector2f(150.f, 150.f);
+    map[pos+3].texCoords = sf::Vector2f(0.f, 75.f);
 
 }
 
@@ -32,7 +32,7 @@ void simple::setPointer(EssentialWindow *es) {
     wgen.setWorldSize(100);
     wgen.setFrequency(100.f);
     wgen.setOctaves(13);
-    m_text.loadFromFile(es->m_PathToParent+"/data/Pics/ish.png");
+    m_text.loadFromFile(es->m_PathToParent+"/data/Pics/iso-test.png");
     float tilesize = 32.0f;
     for(int x =0;x<100;x++)
     {

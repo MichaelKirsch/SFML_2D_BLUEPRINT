@@ -11,7 +11,7 @@ class Exiting : public GameState
 {
 public:
     Exiting(EssentialWindow &Essential);
-    void handle_events(){};
+    void handle_events();
     void logic() override;
     void render() override;
 
