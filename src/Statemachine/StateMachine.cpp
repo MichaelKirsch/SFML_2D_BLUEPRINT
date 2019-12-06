@@ -1,14 +1,13 @@
 #include "StateMachine.h"
 
 
-StateMachine::StateMachine(std::string game_name) : m_GameName(game_name) {
+StateMachine::StateMachine(std::string game_name, int framerate, int updaterate, int eventrate) : m_GameName(game_name) {
     m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName);
-
     m_Essential.m_Window.clear(sf::Color::Black);
     m_Essential.m_Window.display();
-    m_Essential.Framerate = 60;
-    m_Essential.Updaterate = 30;
-    m_Essential.Eventrate = 50;
+    m_Essential.Framerate = framerate;
+    m_Essential.Updaterate = updaterate;
+    m_Essential.Eventrate = eventrate;
     m_Essential.m_GuiStyle.textColor={201, 165, 111};
     m_Essential.m_GuiStyle.defaultColor={45, 45, 42};
     stateCurrentlySet = STATES :: NONE;
@@ -19,11 +18,9 @@ StateMachine::StateMachine(std::string game_name) : m_GameName(game_name) {
     {
         std::cout<<"FONT DIDNT LOAD"<<std::endl;
     }
-    m_Essential.nextState = STATES::MENU; //we want to start with the menu
     sf::Image icon;
     icon.loadFromFile(m_Essential.m_PathToParent+"/data/Pics/icon.png"); // File/Image/Pixel
     m_Essential.m_Window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-
 }
 
 
@@ -46,7 +43,8 @@ void StateMachine::setState() {
     }
 }
 
-void StateMachine::run() {
+void StateMachine::dropIntoState(STATES dropInto) {
+    m_Essential.nextState = dropInto;
     while(m_Essential.nextState != STATES::CLOSING)
     {
         setState();

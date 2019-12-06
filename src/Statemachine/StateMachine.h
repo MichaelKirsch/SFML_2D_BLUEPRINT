@@ -12,9 +12,9 @@
 
 class StateMachine {
 public:
-    StateMachine(std::string game_name); //here we set all the essentials
+    StateMachine(std::string game_name = "Default Name", int framerate = 60, int updaterate = 40, int eventrate=40); //here we set all the essentials
     ~StateMachine() = default;
-    void run();
+    void dropIntoState(STATES dropInto);
     STATES getState() { return m_Essential.nextState;};
     void setState();
 
