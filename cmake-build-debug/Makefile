@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT
+CMAKE_SOURCE_DIR = C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named INSERT_NAME
+# Target rules for targets named CAESAR-2D
 
 # Build rule for target.
-INSERT_NAME: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 INSERT_NAME
-.PHONY : INSERT_NAME
+CAESAR-2D: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 CAESAR-2D
+.PHONY : CAESAR-2D
 
 # fast build rule for target.
-INSERT_NAME/fast:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/build
-.PHONY : INSERT_NAME/fast
+CAESAR-2D/fast:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/build
+.PHONY : CAESAR-2D/fast
 
 libs/FastNoise/FastNoise.obj: libs/FastNoise/FastNoise.cpp.obj
 
@@ -128,7 +128,7 @@ libs/FastNoise/FastNoise.obj: libs/FastNoise/FastNoise.cpp.obj
 
 # target to build an object file
 libs/FastNoise/FastNoise.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/libs/FastNoise/FastNoise.cpp.obj
 .PHONY : libs/FastNoise/FastNoise.cpp.obj
 
 libs/FastNoise/FastNoise.i: libs/FastNoise/FastNoise.cpp.i
@@ -137,7 +137,7 @@ libs/FastNoise/FastNoise.i: libs/FastNoise/FastNoise.cpp.i
 
 # target to preprocess a source file
 libs/FastNoise/FastNoise.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/libs/FastNoise/FastNoise.cpp.i
 .PHONY : libs/FastNoise/FastNoise.cpp.i
 
 libs/FastNoise/FastNoise.s: libs/FastNoise/FastNoise.cpp.s
@@ -146,7 +146,7 @@ libs/FastNoise/FastNoise.s: libs/FastNoise/FastNoise.cpp.s
 
 # target to generate assembly for a file
 libs/FastNoise/FastNoise.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/libs/FastNoise/FastNoise.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/libs/FastNoise/FastNoise.cpp.s
 .PHONY : libs/FastNoise/FastNoise.cpp.s
 
 main.obj: main.cpp.obj
@@ -155,7 +155,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -164,7 +164,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -173,7 +173,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/GUI/GuiManager.obj: src/GUI/GuiManager.cpp.obj
@@ -182,7 +182,7 @@ src/GUI/GuiManager.obj: src/GUI/GuiManager.cpp.obj
 
 # target to build an object file
 src/GUI/GuiManager.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/GuiManager.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/GuiManager.cpp.obj
 .PHONY : src/GUI/GuiManager.cpp.obj
 
 src/GUI/GuiManager.i: src/GUI/GuiManager.cpp.i
@@ -191,7 +191,7 @@ src/GUI/GuiManager.i: src/GUI/GuiManager.cpp.i
 
 # target to preprocess a source file
 src/GUI/GuiManager.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/GuiManager.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/GuiManager.cpp.i
 .PHONY : src/GUI/GuiManager.cpp.i
 
 src/GUI/GuiManager.s: src/GUI/GuiManager.cpp.s
@@ -200,7 +200,7 @@ src/GUI/GuiManager.s: src/GUI/GuiManager.cpp.s
 
 # target to generate assembly for a file
 src/GUI/GuiManager.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/GuiManager.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/GuiManager.cpp.s
 .PHONY : src/GUI/GuiManager.cpp.s
 
 src/GUI/Widgets/Button.obj: src/GUI/Widgets/Button.cpp.obj
@@ -209,7 +209,7 @@ src/GUI/Widgets/Button.obj: src/GUI/Widgets/Button.cpp.obj
 
 # target to build an object file
 src/GUI/Widgets/Button.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/Button.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Button.cpp.obj
 .PHONY : src/GUI/Widgets/Button.cpp.obj
 
 src/GUI/Widgets/Button.i: src/GUI/Widgets/Button.cpp.i
@@ -218,7 +218,7 @@ src/GUI/Widgets/Button.i: src/GUI/Widgets/Button.cpp.i
 
 # target to preprocess a source file
 src/GUI/Widgets/Button.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/Button.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Button.cpp.i
 .PHONY : src/GUI/Widgets/Button.cpp.i
 
 src/GUI/Widgets/Button.s: src/GUI/Widgets/Button.cpp.s
@@ -227,7 +227,7 @@ src/GUI/Widgets/Button.s: src/GUI/Widgets/Button.cpp.s
 
 # target to generate assembly for a file
 src/GUI/Widgets/Button.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/Button.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Button.cpp.s
 .PHONY : src/GUI/Widgets/Button.cpp.s
 
 src/GUI/Widgets/Menu.obj: src/GUI/Widgets/Menu.cpp.obj
@@ -236,7 +236,7 @@ src/GUI/Widgets/Menu.obj: src/GUI/Widgets/Menu.cpp.obj
 
 # target to build an object file
 src/GUI/Widgets/Menu.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/Menu.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Menu.cpp.obj
 .PHONY : src/GUI/Widgets/Menu.cpp.obj
 
 src/GUI/Widgets/Menu.i: src/GUI/Widgets/Menu.cpp.i
@@ -245,7 +245,7 @@ src/GUI/Widgets/Menu.i: src/GUI/Widgets/Menu.cpp.i
 
 # target to preprocess a source file
 src/GUI/Widgets/Menu.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/Menu.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Menu.cpp.i
 .PHONY : src/GUI/Widgets/Menu.cpp.i
 
 src/GUI/Widgets/Menu.s: src/GUI/Widgets/Menu.cpp.s
@@ -254,7 +254,7 @@ src/GUI/Widgets/Menu.s: src/GUI/Widgets/Menu.cpp.s
 
 # target to generate assembly for a file
 src/GUI/Widgets/Menu.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/Menu.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Menu.cpp.s
 .PHONY : src/GUI/Widgets/Menu.cpp.s
 
 src/GUI/Widgets/SimpleText.obj: src/GUI/Widgets/SimpleText.cpp.obj
@@ -263,7 +263,7 @@ src/GUI/Widgets/SimpleText.obj: src/GUI/Widgets/SimpleText.cpp.obj
 
 # target to build an object file
 src/GUI/Widgets/SimpleText.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/SimpleText.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/SimpleText.cpp.obj
 .PHONY : src/GUI/Widgets/SimpleText.cpp.obj
 
 src/GUI/Widgets/SimpleText.i: src/GUI/Widgets/SimpleText.cpp.i
@@ -272,7 +272,7 @@ src/GUI/Widgets/SimpleText.i: src/GUI/Widgets/SimpleText.cpp.i
 
 # target to preprocess a source file
 src/GUI/Widgets/SimpleText.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/SimpleText.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/SimpleText.cpp.i
 .PHONY : src/GUI/Widgets/SimpleText.cpp.i
 
 src/GUI/Widgets/SimpleText.s: src/GUI/Widgets/SimpleText.cpp.s
@@ -281,8 +281,35 @@ src/GUI/Widgets/SimpleText.s: src/GUI/Widgets/SimpleText.cpp.s
 
 # target to generate assembly for a file
 src/GUI/Widgets/SimpleText.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/GUI/Widgets/SimpleText.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/SimpleText.cpp.s
 .PHONY : src/GUI/Widgets/SimpleText.cpp.s
+
+src/Rendering/Renderer.obj: src/Rendering/Renderer.cpp.obj
+
+.PHONY : src/Rendering/Renderer.obj
+
+# target to build an object file
+src/Rendering/Renderer.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Rendering/Renderer.cpp.obj
+.PHONY : src/Rendering/Renderer.cpp.obj
+
+src/Rendering/Renderer.i: src/Rendering/Renderer.cpp.i
+
+.PHONY : src/Rendering/Renderer.i
+
+# target to preprocess a source file
+src/Rendering/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Rendering/Renderer.cpp.i
+.PHONY : src/Rendering/Renderer.cpp.i
+
+src/Rendering/Renderer.s: src/Rendering/Renderer.cpp.s
+
+.PHONY : src/Rendering/Renderer.s
+
+# target to generate assembly for a file
+src/Rendering/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Rendering/Renderer.cpp.s
+.PHONY : src/Rendering/Renderer.cpp.s
 
 src/Statemachine/Gamestate.obj: src/Statemachine/Gamestate.cpp.obj
 
@@ -290,7 +317,7 @@ src/Statemachine/Gamestate.obj: src/Statemachine/Gamestate.cpp.obj
 
 # target to build an object file
 src/Statemachine/Gamestate.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/Statemachine/Gamestate.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Statemachine/Gamestate.cpp.obj
 .PHONY : src/Statemachine/Gamestate.cpp.obj
 
 src/Statemachine/Gamestate.i: src/Statemachine/Gamestate.cpp.i
@@ -299,7 +326,7 @@ src/Statemachine/Gamestate.i: src/Statemachine/Gamestate.cpp.i
 
 # target to preprocess a source file
 src/Statemachine/Gamestate.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/Statemachine/Gamestate.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Statemachine/Gamestate.cpp.i
 .PHONY : src/Statemachine/Gamestate.cpp.i
 
 src/Statemachine/Gamestate.s: src/Statemachine/Gamestate.cpp.s
@@ -308,7 +335,7 @@ src/Statemachine/Gamestate.s: src/Statemachine/Gamestate.cpp.s
 
 # target to generate assembly for a file
 src/Statemachine/Gamestate.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/Statemachine/Gamestate.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Statemachine/Gamestate.cpp.s
 .PHONY : src/Statemachine/Gamestate.cpp.s
 
 src/Statemachine/StateMachine.obj: src/Statemachine/StateMachine.cpp.obj
@@ -317,7 +344,7 @@ src/Statemachine/StateMachine.obj: src/Statemachine/StateMachine.cpp.obj
 
 # target to build an object file
 src/Statemachine/StateMachine.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/Statemachine/StateMachine.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Statemachine/StateMachine.cpp.obj
 .PHONY : src/Statemachine/StateMachine.cpp.obj
 
 src/Statemachine/StateMachine.i: src/Statemachine/StateMachine.cpp.i
@@ -326,7 +353,7 @@ src/Statemachine/StateMachine.i: src/Statemachine/StateMachine.cpp.i
 
 # target to preprocess a source file
 src/Statemachine/StateMachine.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/Statemachine/StateMachine.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Statemachine/StateMachine.cpp.i
 .PHONY : src/Statemachine/StateMachine.cpp.i
 
 src/Statemachine/StateMachine.s: src/Statemachine/StateMachine.cpp.s
@@ -335,7 +362,7 @@ src/Statemachine/StateMachine.s: src/Statemachine/StateMachine.cpp.s
 
 # target to generate assembly for a file
 src/Statemachine/StateMachine.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/Statemachine/StateMachine.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Statemachine/StateMachine.cpp.s
 .PHONY : src/Statemachine/StateMachine.cpp.s
 
 src/States/ChooseMap.obj: src/States/ChooseMap.cpp.obj
@@ -344,7 +371,7 @@ src/States/ChooseMap.obj: src/States/ChooseMap.cpp.obj
 
 # target to build an object file
 src/States/ChooseMap.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/ChooseMap.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/ChooseMap.cpp.obj
 .PHONY : src/States/ChooseMap.cpp.obj
 
 src/States/ChooseMap.i: src/States/ChooseMap.cpp.i
@@ -353,7 +380,7 @@ src/States/ChooseMap.i: src/States/ChooseMap.cpp.i
 
 # target to preprocess a source file
 src/States/ChooseMap.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/ChooseMap.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/ChooseMap.cpp.i
 .PHONY : src/States/ChooseMap.cpp.i
 
 src/States/ChooseMap.s: src/States/ChooseMap.cpp.s
@@ -362,7 +389,7 @@ src/States/ChooseMap.s: src/States/ChooseMap.cpp.s
 
 # target to generate assembly for a file
 src/States/ChooseMap.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/ChooseMap.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/ChooseMap.cpp.s
 .PHONY : src/States/ChooseMap.cpp.s
 
 src/States/MainMenu.obj: src/States/MainMenu.cpp.obj
@@ -371,7 +398,7 @@ src/States/MainMenu.obj: src/States/MainMenu.cpp.obj
 
 # target to build an object file
 src/States/MainMenu.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/MainMenu.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/MainMenu.cpp.obj
 .PHONY : src/States/MainMenu.cpp.obj
 
 src/States/MainMenu.i: src/States/MainMenu.cpp.i
@@ -380,7 +407,7 @@ src/States/MainMenu.i: src/States/MainMenu.cpp.i
 
 # target to preprocess a source file
 src/States/MainMenu.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/MainMenu.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/MainMenu.cpp.i
 .PHONY : src/States/MainMenu.cpp.i
 
 src/States/MainMenu.s: src/States/MainMenu.cpp.s
@@ -389,7 +416,7 @@ src/States/MainMenu.s: src/States/MainMenu.cpp.s
 
 # target to generate assembly for a file
 src/States/MainMenu.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/MainMenu.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/MainMenu.cpp.s
 .PHONY : src/States/MainMenu.cpp.s
 
 src/States/States.obj: src/States/States.cpp.obj
@@ -398,7 +425,7 @@ src/States/States.obj: src/States/States.cpp.obj
 
 # target to build an object file
 src/States/States.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/States.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/States.cpp.obj
 .PHONY : src/States/States.cpp.obj
 
 src/States/States.i: src/States/States.cpp.i
@@ -407,7 +434,7 @@ src/States/States.i: src/States/States.cpp.i
 
 # target to preprocess a source file
 src/States/States.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/States.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/States.cpp.i
 .PHONY : src/States/States.cpp.i
 
 src/States/States.s: src/States/States.cpp.s
@@ -416,7 +443,7 @@ src/States/States.s: src/States/States.cpp.s
 
 # target to generate assembly for a file
 src/States/States.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/States/States.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/States.cpp.s
 .PHONY : src/States/States.cpp.s
 
 src/World/Worldgenerator.obj: src/World/Worldgenerator.cpp.obj
@@ -425,7 +452,7 @@ src/World/Worldgenerator.obj: src/World/Worldgenerator.cpp.obj
 
 # target to build an object file
 src/World/Worldgenerator.cpp.obj:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.obj
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/Worldgenerator.cpp.obj
 .PHONY : src/World/Worldgenerator.cpp.obj
 
 src/World/Worldgenerator.i: src/World/Worldgenerator.cpp.i
@@ -434,7 +461,7 @@ src/World/Worldgenerator.i: src/World/Worldgenerator.cpp.i
 
 # target to preprocess a source file
 src/World/Worldgenerator.cpp.i:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.i
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/Worldgenerator.cpp.i
 .PHONY : src/World/Worldgenerator.cpp.i
 
 src/World/Worldgenerator.s: src/World/Worldgenerator.cpp.s
@@ -443,7 +470,7 @@ src/World/Worldgenerator.s: src/World/Worldgenerator.cpp.s
 
 # target to generate assembly for a file
 src/World/Worldgenerator.cpp.s:
-	$(MAKE) -f CMakeFiles\INSERT_NAME.dir\build.make CMakeFiles/INSERT_NAME.dir/src/World/Worldgenerator.cpp.s
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/Worldgenerator.cpp.s
 .PHONY : src/World/Worldgenerator.cpp.s
 
 src/World/simple.obj: src/World/simple.cpp.obj
@@ -479,7 +506,7 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... INSERT_NAME
+	@echo ... CAESAR-2D
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... libs/FastNoise/FastNoise.obj
@@ -500,6 +527,9 @@ help:
 	@echo ... src/GUI/Widgets/SimpleText.obj
 	@echo ... src/GUI/Widgets/SimpleText.i
 	@echo ... src/GUI/Widgets/SimpleText.s
+	@echo ... src/Rendering/Renderer.obj
+	@echo ... src/Rendering/Renderer.i
+	@echo ... src/Rendering/Renderer.s
 	@echo ... src/Statemachine/Gamestate.obj
 	@echo ... src/Statemachine/Gamestate.i
 	@echo ... src/Statemachine/Gamestate.s

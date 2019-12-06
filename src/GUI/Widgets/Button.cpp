@@ -3,20 +3,21 @@
 #include "Button.h"
 
 gui::Button::Button(EssentialWindow *es, sf::Vector2u pos, std::string text, unsigned int width) : m_Essential(es){
-    this->m_Size = {width,m_Essential->m_GuiStyle.buttonHeight};
+    this->m_Style = m_Essential->m_GuiStyle;
+    this->m_Size = {width,m_Style.buttonHeight};
     this->isVisible = true;
     this->m_Pos = pos;
     this->isCentered = false;
+    this->isActive = true;
     this->m_Text.setFont(es->m_GlobFont);
-    this->setTextColor(es->m_GuiStyle.textColor);
-    this->setFillColor(es->m_GuiStyle.defaultColor);
     this->mouseOver = false;
     refactor();
 }
 
 void gui::Button::setFillColor(sf::Color newCol) {
-    m_FillColor = newCol;
-    m_MouseOver = sf::Color(m_FillColor.r/2,m_FillColor.g/2,m_FillColor.b/2);
+    m_Style.defaultColor = newCol;
+    m_MouseOver = sf::Color(m_Style.defaultColor.r/2,m_Style.defaultColor.g/2,m_Style.defaultColor.b/2);
+    refactor();
 }
 
 void gui::Button::update() {
@@ -27,19 +28,19 @@ void gui::Button::update() {
         //mouse is inside the button
         mouseOver = true;
         m_Rect.setFillColor(m_MouseOver);
-        m_Text.setFillColor(m_Essential->m_GuiStyle.textColor);
+        m_Text.setFillColor(m_Style.textColor);
     }
     else if(!isActive)
     {
         mouseOver = false;
-        m_Rect.setFillColor(m_Essential->m_GuiStyle.inactiveColor);
-        m_Text.setFillColor(m_Essential->m_GuiStyle.textColorInactive);
+        m_Rect.setFillColor(m_Style.inactiveColor);
+        m_Text.setFillColor(m_Style.textColorInactive);
     }
     else
     {
         mouseOver = false;
-        m_Rect.setFillColor(m_FillColor);
-        m_Text.setFillColor(m_Essential->m_GuiStyle.textColor);
+        m_Rect.setFillColor(m_Style.defaultColor);
+        m_Text.setFillColor(m_Style.textColor);
     }
 }
 
@@ -55,15 +56,15 @@ void gui::Button::draw() {
     m_Essential->m_Window.draw(m_Text);
 }
 
-void gui::Button::setSize(sf::Vector2u newSize) {
-    this->m_Size = newSize;
+void gui::Button::setSize(int newSize) {
+    this->m_Style.buttonHeight = newSize;
     refactor();
 }
 
 void gui::Button::refactor() {
-    m_Text.setFillColor(m_TextCol);
+    m_Text.setFillColor(m_Style.textColor);
     auto windowSize = m_Essential->m_Window.getSize();
-    auto sizeInPixels = sf::Vector2f(m_Size.x*(windowSize.x/100.f),m_Size.y*(windowSize.y/100.f));
+    auto sizeInPixels = sf::Vector2f(m_Style.buttonHeight*(windowSize.x/100.f),m_Style.buttonHeight*(windowSize.y/100.f));
     auto positionInPixels =  sf::Vector2f(m_Pos.x*(windowSize.x/100.f),m_Pos.y*(windowSize.y/100.f));
     m_Text.setCharacterSize(sizeInPixels.y); //textsize will be calculated by the rect size
     auto char_count = m_Text.getGlobalBounds().width+m_Text.getLineSpacing();
@@ -109,7 +110,7 @@ void gui::Button::setText(std::string inString) {
 }
 
 void gui::Button::setTextColor(sf::Color newColor) {
-    m_TextCol = newColor;
+    m_Style.textColor = newColor;
     refactor();
 }
 

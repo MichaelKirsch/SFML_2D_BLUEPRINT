@@ -3,7 +3,9 @@
 MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential){
     m1 = m_Gui.addMenu();
     m_Text = m_Gui.addSimpleText();
-    m_Text->setText("Hello World this is a Text");
+    m_Text->setText("CEASAR 2D");
+    m_Text->setSize(13);
+    m_Text->setTextColor({52, 207, 235,200});
     m_Text->setPositionOfCenter({50,6});
     m1->createMenu({"Menu"},{" New Game "," Load Game "," Settings "," Exit "});
     auto path_to_pic = std::experimental::filesystem::current_path().parent_path().string();

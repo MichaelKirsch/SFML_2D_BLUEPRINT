@@ -57,3 +57,7 @@ std::string gui::Menu::getPressedButton() {
     return "none";
 }
 
+gui::Button *gui::Menu::getButtonPtr(std::string buttonName) {
+    return nullptr; //TODO unique pointer umwandeln in Buttoon
+}
+

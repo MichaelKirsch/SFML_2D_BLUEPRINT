@@ -4,7 +4,8 @@
 
 gui::SimpleText::SimpleText(EssentialWindow &es) : m_Essential(es){
     m_TextString = "undefined";
-    m_Text.setFillColor(m_Essential.m_GuiStyle.textColor);
+    m_Style = m_Essential.m_GuiStyle;
+    m_Text.setFillColor(m_Style.textColor);
     m_Text.setFont(m_Essential.m_GlobFont);
     auto charsize = (m_Essential.m_Window.getSize().y/100)*m_Essential.m_GuiStyle.buttonHeight;
     m_Text.setCharacterSize(charsize);
@@ -21,10 +22,10 @@ void gui::SimpleText::draw() {
 }
 
 void gui::SimpleText::refactor() {
-    auto charsize = (m_Essential.m_Window.getSize().y/100)*m_Essential.m_GuiStyle.buttonHeight;
+    auto charsize = (m_Essential.m_Window.getSize().y/100)*m_Style.buttonHeight;
     m_Text.setCharacterSize(charsize);
     m_Text.setString(m_TextString);
-    m_Text.setFillColor(m_Essential.m_GuiStyle.textColor);
+    m_Text.setFillColor(m_Style.textColor);
     auto positionInPixels = sf::Vector2f(m_Position.x*(m_Essential.m_Window.getSize().x/100),m_Position.y*(m_Essential.m_Window.getSize().y/100));
     if(isCentered)
     {
@@ -37,6 +38,16 @@ void gui::SimpleText::refactor() {
 void gui::SimpleText::setPositionOfCenter(sf::Vector2u pos) {
     m_Position = pos;
     isCentered = true;
+    refactor();
+}
+
+void gui::SimpleText::setSize(int size) {
+    m_Style.buttonHeight = size;
+    refactor();
+}
+
+void gui::SimpleText::setTextColor(sf::Color colorToSet) {
+    m_Style.textColor = colorToSet;
     refactor();
 }
 
