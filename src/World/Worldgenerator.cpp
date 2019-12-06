@@ -4,6 +4,9 @@
 
 int Worldgenerator::getHeight(sf::Vector2i pos)
 {
+    if(pos.y==0||pos.y==m_Worldsize||pos.x==0||pos.x==m_Worldsize)
+        return 1000;//return 1000 if its a border
+
     auto heightRaw = m_Noise.GetNoise(pos.x,pos.y);
     auto heightCorrected = (int)(heightRaw*100.0);
     float correction=1.0;

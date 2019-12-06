@@ -179,6 +179,10 @@ void ChooseMap::generateMap() {
                 case 7:
                     col = {48, 42, 21};
                     break;
+                case 100:
+                    //Bordercase
+                    col = { 255,0,0};
+                    break;
             }
 
             m_VertexMap[index].color = col;
