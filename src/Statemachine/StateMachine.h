@@ -12,13 +12,14 @@
 
 class StateMachine {
 public:
-    StateMachine(); //here we set all the essentials
+    StateMachine(std::string game_name); //here we set all the essentials
     ~StateMachine() = default;
     void run();
     STATES getState() { return m_Essential.nextState;};
     void setState();
 
 private:
+    std::string m_GameName = "Default Name";
     STATES stateCurrentlySet;
     EssentialWindow m_Essential;
     std::unique_ptr<GameState> uniquePtrState;

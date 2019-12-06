@@ -2,7 +2,7 @@
 //
 int main()
 {
-    StateMachine stm;
+    StateMachine stm{"Ceasar-2D"};
     stm.run();
 }
 

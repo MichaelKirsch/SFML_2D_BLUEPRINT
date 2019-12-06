@@ -1,8 +1,8 @@
 #include "StateMachine.h"
 
 
-StateMachine::StateMachine() {
-    m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),"A new World");
+StateMachine::StateMachine(std::string game_name) : m_GameName(game_name) {
+    m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName);
 
     m_Essential.m_Window.clear(sf::Color::Black);
     m_Essential.m_Window.display();
