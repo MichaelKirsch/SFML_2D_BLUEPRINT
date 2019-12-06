@@ -1,6 +1,20 @@
-"C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT
--- Found SFML 2.5.1 in C:/Users/micha/CLionProjects/SFML_2D_BLUEPRINT/libs/SFML-2.5.1/lib/cmake/SFML
--- Found TGUI 0.8.6 in C:/Users/micha/CLionProjects/SFML_2D_BLUEPRINT/libs/TGUI-0.8/lib/cmake/TGUI
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/micha/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT
+CMake Error at CMakeLists.txt:16 (find_package):
+  By not providing "FindSFML.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "SFML", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "SFML" (requested
+  version 2.5.1) with any of the following names:
+
+    SFMLConfig.cmake
+    sfml-config.cmake
+
+  Add the installation prefix of "SFML" to CMAKE_PREFIX_PATH or set
+  "SFML_DIR" to a directory containing one of the above files.  If "SFML"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug/CMakeFiles/CMakeOutput.log".
