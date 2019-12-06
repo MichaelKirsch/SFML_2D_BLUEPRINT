@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-set(PROJECT_NAME "INSERT_NAME")
+set(PROJECT_NAME "CAESAR-2D")
 project(${PROJECT_NAME})
 set(SFML_DIR "${CMAKE_CURRENT_LIST_DIR}/libs/SFML-2.5.1/lib/cmake/SFML")
 set(TGUI_DIR "${CMAKE_CURRENT_LIST_DIR}/libs/TGUI-0.8/lib/cmake/TGUI")
