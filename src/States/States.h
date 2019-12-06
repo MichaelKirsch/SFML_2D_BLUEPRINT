@@ -6,16 +6,18 @@
 #include "../Statemachine/Gamestate.h"
 #include "../Statemachine/EssentialWindow.h"
 #include <experimental/filesystem>
-
+#include "../World/simple.h"
 class Exiting : public GameState
 {
 public:
-    Exiting(EssentialWindow& Essential);
-    void handle_events(){};
+    Exiting(EssentialWindow &Essential);
+    void handle_events();
     void logic() override;
     void render() override;
 
 private:
     float time_left;
+    EssentialWindow& es;
+    simple m_test;
     sf::Text m_GoddbyeText;
 };
