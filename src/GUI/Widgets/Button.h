@@ -15,7 +15,7 @@ namespace gui
         void draw();
         void setVisible(bool visibility);
         void setEssentialWindow(EssentialWindow* );
-        void setSize(sf::Vector2u);
+        void setSize(int newSize);
         void setTextColor(sf::Color newColor);
         void setFillColor(sf::Color newColor);
         void update();
