@@ -16,7 +16,6 @@ public:
     void render() override;
 
 private:
-    float time_left;
     EssentialWindow& es;
     simple m_test;
     sf::Text m_GoddbyeText;

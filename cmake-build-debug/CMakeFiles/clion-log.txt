@@ -1,17 +1,5 @@
 "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT
 -- Found SFML 2.5.1 in C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/libs/SFML-2.5.1/lib/cmake/SFML
 -- Configuring done
-CMake Error at CMakeLists.txt:15 (add_executable):
-  Cannot find source file:
-
-    libs/FastNoise/FastNoise.h
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
-  .hpp .hxx .in .txx
-
-
-CMake Error at CMakeLists.txt:15 (add_executable):
-  No SOURCES given to target: CAESAR-2D
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Generating done
+-- Build files have been written to: C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug

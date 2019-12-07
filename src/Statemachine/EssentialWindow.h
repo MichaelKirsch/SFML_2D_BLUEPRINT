@@ -32,4 +32,8 @@ class EssentialWindow
         {
             return {(m_Window.getSize().x/100)*percentages.x,(m_Window.getSize().y/100)*percentages.y};
         }
+        sf::Vector2i getMouseRelPos()
+        {
+            return m_Mouse.getPosition(m_Window);
+        }
 };

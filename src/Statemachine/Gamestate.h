@@ -15,11 +15,7 @@ public:
     void run();
 
     virtual void handle_events() {
-        sf::Event m_Event;
-        while (getGamestateEssential()->m_Window.pollEvent(m_Event))
-        {
-            //TODO set some state vars when polling
-        }
+
     };
 
     virtual void logic() {

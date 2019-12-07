@@ -31,14 +31,24 @@ public:
 class simple {
 public:
     simple();
+
+    void update();
     void setPointer(EssentialWindow* es);
     ~simple()= default;
     sf::Texture m_text;
+    sf::Texture tree;
     sf::VertexArray map;
+    sf::VertexArray tile_overlay;
+    sf::RectangleShape mouse_rect;
     void drawTile(float x, float y, int pos, float tilesize,sf::Color col);
     void tile(int nbr,int x,int y);
     Worldgenerator wgen;
     EssentialWindow* es;
+    int occ = 150;
+    sf::Clock b_cl;
+    float building_timer;
+    bool pointerset = false;
+    bool dir;
 protected:
 };
 
