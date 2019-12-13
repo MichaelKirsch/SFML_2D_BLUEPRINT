@@ -31,20 +31,26 @@ public:
 class simple {
 public:
     simple();
-
     void update();
     void setPointer(EssentialWindow* es);
+    const int worldsize=4;
+    int world_space = 0;
     ~simple()= default;
     sf::Texture m_text;
     sf::Texture tree;
+    sf::View view1;
+    sf::Text coordinatestext;
+    sf::Texture m_ground;
     sf::VertexArray map;
     sf::VertexArray tile_overlay;
     sf::RectangleShape mouse_rect;
+    sf::RectangleShape ground_test;
     void drawTile(float x, float y, int pos, float tilesize,sf::Color col);
     void tile(int nbr,int x,int y);
     Worldgenerator wgen;
     EssentialWindow* es;
     int occ = 150;
+    int danwjhk = 0;
     sf::Clock b_cl;
     float building_timer;
     bool pointerset = false;

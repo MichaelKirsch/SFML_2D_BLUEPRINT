@@ -29,8 +29,8 @@ namespace gui
         void refactor();//this function will be called when there is any change in size color or anything like that
         bool mouseOver;
         bool isCentered = false;
-        sf::RectangleShape m_Rect;
         EssentialWindow* m_Essential;
+        sf::RectangleShape m_Rect;
         sf::Vector2u m_Size,m_Pos = {0,0};
         sf::Color m_FillColor,m_MouseOver,m_TextCol;
     };

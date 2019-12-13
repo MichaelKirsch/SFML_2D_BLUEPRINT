@@ -2,7 +2,7 @@
 
 #include "Button.h"
 
-gui::Button::Button(EssentialWindow *es, sf::Vector2u pos, std::string text, unsigned int width) : m_Essential(es){
+gui::Button::Button(EssentialWindow* es, sf::Vector2u pos, std::string text, unsigned int width) : m_Essential(es){
     this->m_Style = m_Essential->m_GuiStyle;
     this->m_Size = {width,m_Style.buttonHeight};
     this->isVisible = true;

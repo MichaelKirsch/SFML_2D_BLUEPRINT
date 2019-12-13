@@ -22,7 +22,7 @@ void ChooseMap::init() {
     mapLining.setSize({size_box.y,size_box.y}); //this is right as it is. we need the y-value both times to get it square and to be sure that it will fit with the buttons
     mapLining.setFillColor(m_Essential.m_GuiStyle.inactiveColor);
     mouse_circle.setSize({m_Essential.getPixelValues({0.5,0.5}).y,m_Essential.getPixelValues({0.5,0.5}).y});
-    mouse_circle.setFillColor(sf::Color(255,0,0,100));
+    mouse_circle.setFillColor(sf::Color(255, 0, 0, 100));
     auto circle_size = mouse_circle.getSize();
     mouse_circle.setOrigin(circle_size.x/2,circle_size.y/2);
     if(DEBUG == 1)
@@ -30,6 +30,7 @@ void ChooseMap::init() {
         seedText->setActive(0);
     }
     generateMap();
+    m_WorldGen.setSafetyZone(14);
 }
 
 void ChooseMap::handle_events() {

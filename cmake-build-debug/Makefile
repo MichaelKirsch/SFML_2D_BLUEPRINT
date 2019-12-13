@@ -230,6 +230,33 @@ src/GUI/Widgets/Button.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Button.cpp.s
 .PHONY : src/GUI/Widgets/Button.cpp.s
 
+src/GUI/Widgets/ExtensiveMenu.obj: src/GUI/Widgets/ExtensiveMenu.cpp.obj
+
+.PHONY : src/GUI/Widgets/ExtensiveMenu.obj
+
+# target to build an object file
+src/GUI/Widgets/ExtensiveMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/ExtensiveMenu.cpp.obj
+.PHONY : src/GUI/Widgets/ExtensiveMenu.cpp.obj
+
+src/GUI/Widgets/ExtensiveMenu.i: src/GUI/Widgets/ExtensiveMenu.cpp.i
+
+.PHONY : src/GUI/Widgets/ExtensiveMenu.i
+
+# target to preprocess a source file
+src/GUI/Widgets/ExtensiveMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/ExtensiveMenu.cpp.i
+.PHONY : src/GUI/Widgets/ExtensiveMenu.cpp.i
+
+src/GUI/Widgets/ExtensiveMenu.s: src/GUI/Widgets/ExtensiveMenu.cpp.s
+
+.PHONY : src/GUI/Widgets/ExtensiveMenu.s
+
+# target to generate assembly for a file
+src/GUI/Widgets/ExtensiveMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/ExtensiveMenu.cpp.s
+.PHONY : src/GUI/Widgets/ExtensiveMenu.cpp.s
+
 src/GUI/Widgets/Menu.obj: src/GUI/Widgets/Menu.cpp.obj
 
 .PHONY : src/GUI/Widgets/Menu.obj
@@ -283,6 +310,33 @@ src/GUI/Widgets/SimpleText.s: src/GUI/Widgets/SimpleText.cpp.s
 src/GUI/Widgets/SimpleText.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/SimpleText.cpp.s
 .PHONY : src/GUI/Widgets/SimpleText.cpp.s
+
+src/GUI/Widgets/TexturedButtonWithOptionalText.obj: src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.obj
+
+.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.obj
+
+# target to build an object file
+src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.obj
+.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.obj
+
+src/GUI/Widgets/TexturedButtonWithOptionalText.i: src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.i
+
+.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.i
+
+# target to preprocess a source file
+src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.i
+.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.i
+
+src/GUI/Widgets/TexturedButtonWithOptionalText.s: src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s
+
+.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.s
+
+# target to generate assembly for a file
+src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s
+.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s
 
 src/Rendering/Renderer.obj: src/Rendering/Renderer.cpp.obj
 
@@ -446,6 +500,33 @@ src/States/States.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/States.cpp.s
 .PHONY : src/States/States.cpp.s
 
+src/Util/TextureHandler.obj: src/Util/TextureHandler.cpp.obj
+
+.PHONY : src/Util/TextureHandler.obj
+
+# target to build an object file
+src/Util/TextureHandler.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Util/TextureHandler.cpp.obj
+.PHONY : src/Util/TextureHandler.cpp.obj
+
+src/Util/TextureHandler.i: src/Util/TextureHandler.cpp.i
+
+.PHONY : src/Util/TextureHandler.i
+
+# target to preprocess a source file
+src/Util/TextureHandler.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Util/TextureHandler.cpp.i
+.PHONY : src/Util/TextureHandler.cpp.i
+
+src/Util/TextureHandler.s: src/Util/TextureHandler.cpp.s
+
+.PHONY : src/Util/TextureHandler.s
+
+# target to generate assembly for a file
+src/Util/TextureHandler.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Util/TextureHandler.cpp.s
+.PHONY : src/Util/TextureHandler.cpp.s
+
 src/World/Worldgenerator.obj: src/World/Worldgenerator.cpp.obj
 
 .PHONY : src/World/Worldgenerator.obj
@@ -472,6 +553,33 @@ src/World/Worldgenerator.s: src/World/Worldgenerator.cpp.s
 src/World/Worldgenerator.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/Worldgenerator.cpp.s
 .PHONY : src/World/Worldgenerator.cpp.s
+
+src/World/isotest.obj: src/World/isotest.cpp.obj
+
+.PHONY : src/World/isotest.obj
+
+# target to build an object file
+src/World/isotest.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/isotest.cpp.obj
+.PHONY : src/World/isotest.cpp.obj
+
+src/World/isotest.i: src/World/isotest.cpp.i
+
+.PHONY : src/World/isotest.i
+
+# target to preprocess a source file
+src/World/isotest.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/isotest.cpp.i
+.PHONY : src/World/isotest.cpp.i
+
+src/World/isotest.s: src/World/isotest.cpp.s
+
+.PHONY : src/World/isotest.s
+
+# target to generate assembly for a file
+src/World/isotest.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/isotest.cpp.s
+.PHONY : src/World/isotest.cpp.s
 
 src/World/simple.obj: src/World/simple.cpp.obj
 
@@ -521,12 +629,18 @@ help:
 	@echo ... src/GUI/Widgets/Button.obj
 	@echo ... src/GUI/Widgets/Button.i
 	@echo ... src/GUI/Widgets/Button.s
+	@echo ... src/GUI/Widgets/ExtensiveMenu.obj
+	@echo ... src/GUI/Widgets/ExtensiveMenu.i
+	@echo ... src/GUI/Widgets/ExtensiveMenu.s
 	@echo ... src/GUI/Widgets/Menu.obj
 	@echo ... src/GUI/Widgets/Menu.i
 	@echo ... src/GUI/Widgets/Menu.s
 	@echo ... src/GUI/Widgets/SimpleText.obj
 	@echo ... src/GUI/Widgets/SimpleText.i
 	@echo ... src/GUI/Widgets/SimpleText.s
+	@echo ... src/GUI/Widgets/TexturedButtonWithOptionalText.obj
+	@echo ... src/GUI/Widgets/TexturedButtonWithOptionalText.i
+	@echo ... src/GUI/Widgets/TexturedButtonWithOptionalText.s
 	@echo ... src/Rendering/Renderer.obj
 	@echo ... src/Rendering/Renderer.i
 	@echo ... src/Rendering/Renderer.s
@@ -545,9 +659,15 @@ help:
 	@echo ... src/States/States.obj
 	@echo ... src/States/States.i
 	@echo ... src/States/States.s
+	@echo ... src/Util/TextureHandler.obj
+	@echo ... src/Util/TextureHandler.i
+	@echo ... src/Util/TextureHandler.s
 	@echo ... src/World/Worldgenerator.obj
 	@echo ... src/World/Worldgenerator.i
 	@echo ... src/World/Worldgenerator.s
+	@echo ... src/World/isotest.obj
+	@echo ... src/World/isotest.i
+	@echo ... src/World/isotest.s
 	@echo ... src/World/simple.obj
 	@echo ... src/World/simple.i
 	@echo ... src/World/simple.s

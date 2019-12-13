@@ -13,6 +13,7 @@ struct Style
     sf::Color textColorInactive = {200,40,40};
     //unsigned int roundnessOfCorners = 4;
     unsigned int buttonHeight = 4;
+    int animationSpeed = 10;
 };
 
 

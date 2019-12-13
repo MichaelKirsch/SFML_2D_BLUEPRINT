@@ -12,6 +12,7 @@ link_libraries(stdc++fs) #link the filesystem
 file(GLOB_RECURSE SCRF "src/*.cpp" "src/*.hpp")
 include_directories("libs/FastNoise")
 include_directories("src/Statemachine")
-add_executable(${PROJECT_NAME} ${SCRF} main.cpp libs/FastNoise/FastNoise.h libs/FastNoise/FastNoise.cpp)
+include_directories("src/Util")
+add_executable(${PROJECT_NAME} ${SCRF} main.cpp libs/FastNoise/FastNoise.h libs/FastNoise/FastNoise.cpp src/GUI/Widgets/TexturedButtonWithOptionalText.cpp src/GUI/Widgets/TexturedButtonWithOptionalText.h)
 find_package(SFML 2.5.1 COMPONENTS system window graphics network audio REQUIRED)
 target_link_libraries(${PROJECT_NAME} sfml-audio sfml-graphics sfml-window sfml-system)

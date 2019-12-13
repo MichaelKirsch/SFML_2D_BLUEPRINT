@@ -12,9 +12,12 @@ void Exiting::logic() {
 
 void Exiting::render() {
     GameState::getGamestateEssential()->m_Window.clear();
+    GameState::getGamestateEssential()->m_Window.setView(m_test.view1);
     GameState::getGamestateEssential()->m_Window.draw(m_test.map,&m_test.m_text);
-    //GameState::getGamestateEssential()->m_Window.draw(m_test.tile_overlay);
+    GameState::getGamestateEssential()->m_Window.draw(m_test.tile_overlay);
+    GameState::getGamestateEssential()->m_Window.draw(m_test.ground_test);
     GameState::getGamestateEssential()->m_Window.draw(m_test.mouse_rect);
+    GameState::getGamestateEssential()->m_Window.draw(m_test.coordinatestext);
     GameState::getGamestateEssential()->m_Window.display();
 }
 
