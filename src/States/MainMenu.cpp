@@ -1,8 +1,13 @@
 #include "MainMenu.h"
 
-MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential){
+MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential),m_settings(Essential){
     m1 = m_Gui.addMenu();
     m_Text = m_Gui.addSimpleText();
+    m_prog = m_Gui.addProgressBar(50,100);
+    m_prog->setBarColor(sf::Color::Red);
+    m_prog->setMaxValue(150);
+    m_prog->setSize({15,6});
+    m_prog->setPosition({30.f,10.f});
     m_Text->setText("CEASAR 2D");
     m_Text->setSize(13);
     m_Text->setTextColor({52, 207, 235,200});
@@ -26,6 +31,19 @@ void MainMenu::handle_events() {
     {
         GameState::getGamestateEssential()->nextState = STATES::CHOOSE_MAP;
     }
+    if(m1->getButtonState(" Load Game "))
+    {
+        m_SetObj.version = this->getRuntimeOfState();
+        m_settings.serialize(&m_SetObj);
+    }
+
+    if(m1->getButtonState(" Settings "))
+    {
+        printf("%f\n",m_SetObj.version);
+        m_settings.deserialize(&m_SetObj);
+        printf("%f\n",m_SetObj.version);
+        this->m_Text->setText(std::to_string(m_SetObj.version));
+    }
 
     sf::Event m_Event;
     while (getGamestateEssential()->m_Window.pollEvent(m_Event))
@@ -38,7 +56,11 @@ void MainMenu::handle_events() {
 }
 
 void MainMenu::logic() {
-
+    if(m_prog->getValue()<m_prog->getMaxValue())
+    {
+        m_prog->setValue(m_prog->getValue()+1);
+    } else
+        m_prog->setValue(0);
 }
 
 void MainMenu::render() {

@@ -5,10 +5,10 @@
 #include "Widgets/Button.h"
 #include "Widgets/Menu.h"
 #include "Widgets/SimpleText.h"
+#include "Widgets/progressBar.h"
 #include <experimental/filesystem>
 #include <string>
 #include <vector>
-
 namespace gui
 {
     class Manager
@@ -25,6 +25,7 @@ namespace gui
         gui::SimpleText* addSimpleText();
         gui::SimpleText* addSimpleText(std::string);
         gui::SimpleText* addSimpleTextCentered(std::string,sf::Vector2u);
+        gui::progressBar* addProgressBar(int value,int max_value);
     private:
         EssentialWindow& m_Essential;
         std::vector<std::unique_ptr<Widget>> m_Elements;

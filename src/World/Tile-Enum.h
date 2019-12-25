@@ -9,7 +9,6 @@ enum class TILE_TYPE
     WATER,
     SHALLOW_WATER,
     BUILDING,
-    VOID,
     BORDER,
     IRON,
     GRAVEL

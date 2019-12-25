@@ -64,3 +64,11 @@ gui::SimpleText *gui::Manager::addSimpleTextCentered(std::string text , sf::Vect
     m_Elements.emplace_back(newElement);
     return newElement;
 }
+
+gui::progressBar *gui::Manager::addProgressBar(int value, int max_value) {
+    auto *newElement = new progressBar(m_Essential);
+    newElement->setValue(value);
+    newElement->setMaxValue(max_value);
+    m_Elements.emplace_back(newElement);
+    return newElement;
+}

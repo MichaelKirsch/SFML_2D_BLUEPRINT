@@ -37,4 +37,14 @@ class EssentialWindow
         {
             return m_Mouse.getPosition(m_Window);
         }
+
+        sf::Vector2i fromPercentageToScreenInt(sf::Vector2i inPerc)
+        {
+            return {(int)(m_Window.getSize().x*(inPerc.x/100.0f)),(int)(m_Window.getSize().y*(inPerc.y/100.0f))};
+        }
+        sf::Vector2f fromPercentageToScreenFloat(sf::Vector2i inPerc)
+        {
+            return {(m_Window.getSize().x*(inPerc.x/100.0f)),(m_Window.getSize().y*(inPerc.y/100.0f))};
+        }
 };
+

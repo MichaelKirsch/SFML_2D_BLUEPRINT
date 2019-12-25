@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT
+CMAKE_SOURCE_DIR = C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -338,6 +338,33 @@ src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s
 .PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s
 
+src/GUI/Widgets/progressBar.obj: src/GUI/Widgets/progressBar.cpp.obj
+
+.PHONY : src/GUI/Widgets/progressBar.obj
+
+# target to build an object file
+src/GUI/Widgets/progressBar.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/progressBar.cpp.obj
+.PHONY : src/GUI/Widgets/progressBar.cpp.obj
+
+src/GUI/Widgets/progressBar.i: src/GUI/Widgets/progressBar.cpp.i
+
+.PHONY : src/GUI/Widgets/progressBar.i
+
+# target to preprocess a source file
+src/GUI/Widgets/progressBar.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/progressBar.cpp.i
+.PHONY : src/GUI/Widgets/progressBar.cpp.i
+
+src/GUI/Widgets/progressBar.s: src/GUI/Widgets/progressBar.cpp.s
+
+.PHONY : src/GUI/Widgets/progressBar.s
+
+# target to generate assembly for a file
+src/GUI/Widgets/progressBar.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/progressBar.cpp.s
+.PHONY : src/GUI/Widgets/progressBar.cpp.s
+
 src/Rendering/Renderer.obj: src/Rendering/Renderer.cpp.obj
 
 .PHONY : src/Rendering/Renderer.obj
@@ -500,6 +527,33 @@ src/States/States.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/States.cpp.s
 .PHONY : src/States/States.cpp.s
 
+src/Util/Serialization.obj: src/Util/Serialization.cpp.obj
+
+.PHONY : src/Util/Serialization.obj
+
+# target to build an object file
+src/Util/Serialization.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Util/Serialization.cpp.obj
+.PHONY : src/Util/Serialization.cpp.obj
+
+src/Util/Serialization.i: src/Util/Serialization.cpp.i
+
+.PHONY : src/Util/Serialization.i
+
+# target to preprocess a source file
+src/Util/Serialization.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Util/Serialization.cpp.i
+.PHONY : src/Util/Serialization.cpp.i
+
+src/Util/Serialization.s: src/Util/Serialization.cpp.s
+
+.PHONY : src/Util/Serialization.s
+
+# target to generate assembly for a file
+src/Util/Serialization.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/Util/Serialization.cpp.s
+.PHONY : src/Util/Serialization.cpp.s
+
 src/Util/TextureHandler.obj: src/Util/TextureHandler.cpp.obj
 
 .PHONY : src/Util/TextureHandler.obj
@@ -553,33 +607,6 @@ src/World/Worldgenerator.s: src/World/Worldgenerator.cpp.s
 src/World/Worldgenerator.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/Worldgenerator.cpp.s
 .PHONY : src/World/Worldgenerator.cpp.s
-
-src/World/isotest.obj: src/World/isotest.cpp.obj
-
-.PHONY : src/World/isotest.obj
-
-# target to build an object file
-src/World/isotest.cpp.obj:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/isotest.cpp.obj
-.PHONY : src/World/isotest.cpp.obj
-
-src/World/isotest.i: src/World/isotest.cpp.i
-
-.PHONY : src/World/isotest.i
-
-# target to preprocess a source file
-src/World/isotest.cpp.i:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/isotest.cpp.i
-.PHONY : src/World/isotest.cpp.i
-
-src/World/isotest.s: src/World/isotest.cpp.s
-
-.PHONY : src/World/isotest.s
-
-# target to generate assembly for a file
-src/World/isotest.cpp.s:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/isotest.cpp.s
-.PHONY : src/World/isotest.cpp.s
 
 src/World/simple.obj: src/World/simple.cpp.obj
 
@@ -641,6 +668,9 @@ help:
 	@echo ... src/GUI/Widgets/TexturedButtonWithOptionalText.obj
 	@echo ... src/GUI/Widgets/TexturedButtonWithOptionalText.i
 	@echo ... src/GUI/Widgets/TexturedButtonWithOptionalText.s
+	@echo ... src/GUI/Widgets/progressBar.obj
+	@echo ... src/GUI/Widgets/progressBar.i
+	@echo ... src/GUI/Widgets/progressBar.s
 	@echo ... src/Rendering/Renderer.obj
 	@echo ... src/Rendering/Renderer.i
 	@echo ... src/Rendering/Renderer.s
@@ -659,15 +689,15 @@ help:
 	@echo ... src/States/States.obj
 	@echo ... src/States/States.i
 	@echo ... src/States/States.s
+	@echo ... src/Util/Serialization.obj
+	@echo ... src/Util/Serialization.i
+	@echo ... src/Util/Serialization.s
 	@echo ... src/Util/TextureHandler.obj
 	@echo ... src/Util/TextureHandler.i
 	@echo ... src/Util/TextureHandler.s
 	@echo ... src/World/Worldgenerator.obj
 	@echo ... src/World/Worldgenerator.i
 	@echo ... src/World/Worldgenerator.s
-	@echo ... src/World/isotest.obj
-	@echo ... src/World/isotest.i
-	@echo ... src/World/isotest.s
 	@echo ... src/World/simple.obj
 	@echo ... src/World/simple.i
 	@echo ... src/World/simple.s
