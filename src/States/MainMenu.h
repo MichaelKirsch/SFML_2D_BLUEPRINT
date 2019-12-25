@@ -16,6 +16,7 @@ public:
 private:
     gui::Manager m_Gui;
     gui::progressBar* m_prog;
+    gui::progressBar* m_prog2;
     gui::SimpleText* m_Text;
     gui::Menu* m1;
     sf::RectangleShape m_BackgroudPic;

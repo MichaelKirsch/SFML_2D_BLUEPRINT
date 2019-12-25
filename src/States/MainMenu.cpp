@@ -4,10 +4,17 @@ MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Esse
     m1 = m_Gui.addMenu();
     m_Text = m_Gui.addSimpleText();
     m_prog = m_Gui.addProgressBar(50,100);
-    m_prog->setBarColor(sf::Color::Red);
+    m_prog2 = m_Gui.addProgressBar(50,150);
+    m_prog->setBarColor({255,1,0,200});
+    m_prog->setBackground({80,80,80,80});
+    m_prog2->setBarColor({1,255,0,200});
+    m_prog2->setBackground({80,80,80,80});
     m_prog->setMaxValue(150);
-    m_prog->setSize({15,6});
-    m_prog->setPosition({30.f,10.f});
+    m_prog->setSize({15,3});
+    m_prog->setPosition({10.f,91.f});
+    m_prog2->setSize({15,3});
+    m_prog2->setPosition({10.f,95.f});
+    m_prog2->setOrientation(gui::progressBar::ORIENTATION::VERTICAL);
     m_Text->setText("CEASAR 2D");
     m_Text->setSize(13);
     m_Text->setTextColor({52, 207, 235,200});
@@ -61,6 +68,7 @@ void MainMenu::logic() {
         m_prog->setValue(m_prog->getValue()+1);
     } else
         m_prog->setValue(0);
+    m_prog2->setValue(m_prog->getValue());
 }
 
 void MainMenu::render() {
