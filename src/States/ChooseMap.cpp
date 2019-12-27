@@ -16,7 +16,6 @@ void ChooseMap::init() {
     useThisMap = m_GuiManager.addButtonCentered("Start the game on Ship",{80,50});
     spawnOnLand = m_GuiManager.addButtonCentered("Start the game on Land",{80,50+2*m_Essential.m_GuiStyle.buttonHeight});
     backButton = m_GuiManager.addButtonCentered("Back",{80,50+4*m_Essential.m_GuiStyle.buttonHeight});
-
     mapLining.setPosition(m_Essential.getPixelValues({10,10}));
     auto size_box = m_Essential.getPixelValues({80,80});
     mapLining.setSize({size_box.y,size_box.y}); //this is right as it is. we need the y-value both times to get it square and to be sure that it will fit with the buttons
@@ -25,7 +24,7 @@ void ChooseMap::init() {
     mouse_circle.setFillColor(sf::Color(255, 0, 0, 100));
     auto circle_size = mouse_circle.getSize();
     mouse_circle.setOrigin(circle_size.x/2,circle_size.y/2);
-    if(DEBUG == 1)
+    if(DEBUG)
     {
         seedText->setActive(0);
     }
@@ -165,7 +164,7 @@ void ChooseMap::generateMap() {
                     break;
                 case 100:
                     //Bordercase
-                    col = { 255,0,0};
+                    col = { 0,0,0};
                     break;
             }
 

@@ -14,7 +14,7 @@ MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Esse
     m_prog->setPosition({10.f,91.f});
     m_prog2->setSize({15,3});
     m_prog2->setPosition({10.f,95.f});
-    m_prog2->setOrientation(gui::progressBar::ORIENTATION::VERTICAL);
+    m_prog2->setOrientation(gui::progressBar::ORIENTATION::HORIZONTAL);
     m_Text->setText("CEASAR 2D");
     m_Text->setSize(13);
     m_Text->setTextColor({52, 207, 235,200});
