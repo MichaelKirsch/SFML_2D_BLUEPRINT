@@ -1,0 +1,10 @@
+{
+  "width": 1600,
+  "height": 1000,
+  "fullscreen": true,
+  "vsync": true,
+  "name": "default",
+  "framerate": 60,
+  "updaterate": 40,
+  "eventrate": 100
+}

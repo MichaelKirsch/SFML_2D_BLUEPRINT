@@ -2,7 +2,7 @@
 
 #include "Menu.h"
 
-gui::Menu::Menu(EssentialWindow* es) : m_Essential(es) {
+gui::Menu::Menu(EssentialWindow& es) : Widget(es) {
 }
 
 void gui::Menu::draw() {
@@ -20,13 +20,13 @@ void gui::Menu::update() {
 }
 
 void gui::Menu::createMenu(std::string name, std::vector<std::string> buttons, unsigned int x_center_line_pos) {
-    auto screenPercentageUsedByButtonsAndSpaces = m_Essential->m_GuiStyle.buttonHeight*((2*buttons.size())-1);
+    auto screenPercentageUsedByButtonsAndSpaces = m_Essential.m_GuiStyle.buttonHeight*((2*buttons.size())-1);
     auto topAndBottomSpace = 100-screenPercentageUsedByButtonsAndSpaces;
-    int middleOfFirstButton = (topAndBottomSpace/2)+(m_Essential->m_GuiStyle.buttonHeight*0.5);
+    int middleOfFirstButton = (topAndBottomSpace/2)+(m_Essential.m_GuiStyle.buttonHeight*0.5);
     int index = 0;
     for(auto& bu:buttons)
     {
-        sf::Vector2u position = {x_center_line_pos,middleOfFirstButton+(2*index*m_Essential->m_GuiStyle.buttonHeight)};
+        sf::Vector2u position = {x_center_line_pos,middleOfFirstButton+(2*index*m_Essential.m_GuiStyle.buttonHeight)};
         auto Buffer = new Button(m_Essential,position,bu);
         Buffer->setText(bu);
         Buffer->setPositionOfCenter(position);

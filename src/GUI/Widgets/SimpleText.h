@@ -22,7 +22,6 @@ namespace gui
         void refactor();
         bool isCentered = false;
         std::string m_TextString = "undefined";
-        EssentialWindow& m_Essential;
         sf::Text m_Text;
         sf::Vector2u m_Position ={0,0};
     };

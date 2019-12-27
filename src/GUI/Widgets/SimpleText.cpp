@@ -2,7 +2,7 @@
 
 #include "SimpleText.h"
 
-gui::SimpleText::SimpleText(EssentialWindow &es) : m_Essential(es){
+gui::SimpleText::SimpleText(EssentialWindow &es) : Widget(es){
     m_TextString = "undefined";
     m_Style = m_Essential.m_GuiStyle;
     m_Text.setFillColor(m_Style.textColor);

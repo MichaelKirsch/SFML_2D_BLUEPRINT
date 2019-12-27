@@ -46,7 +46,7 @@ void gui::progressBar::refactor() {
     valueText.setPosition(pos_left_upper);
 }
 
-gui::progressBar::progressBar(EssentialWindow &m_es) : m_Essential(m_es){
+gui::progressBar::progressBar(EssentialWindow &m_es) : Widget(m_es){
     refactor();
 }
 

@@ -21,8 +21,7 @@ private:
     gui::Menu* m1;
     sf::RectangleShape m_BackgroudPic;
     sf::Texture m_BackTexture;
-    SerSettings m_settings;
-    SettingsObject m_SetObj;
+
 };
 
 

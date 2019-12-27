@@ -48,10 +48,60 @@ void StateMachine::setState() {
 
 void StateMachine::dispatch(STATES dropInto) {
     m_Essential.nextState = dropInto;
-    while(m_Essential.nextState != STATES::CLOSING)
+    while(m_Essential.nextState != STATES::CLOSING )
     {
+        if(m_Essential.refactor_is_needed)
+            refactor();
         setState();
         uniquePtrState->run();
     }
     m_Essential.m_Window.close();
 }
+
+StateMachine::StateMachine(std::string game_name,std::string profile): m_GameName(game_name) {
+    std::string path= std::experimental::filesystem::current_path().parent_path().string();
+    m_Essential.m_PathToParent = path;
+    path+="/data/Font/Ubuntu-R.ttf";
+    if(!m_Essential.m_GlobFont.loadFromFile(path))
+    {
+        std::cout<<"FONT DIDNT LOAD"<<std::endl;
+    }
+    m_ProfileName = profile;
+    std::string path_profile = m_Essential.m_PathToParent+"/data/Profiles/"+profile;
+    std::ifstream o(path_profile);
+    o>>buffer;
+    if(buffer.at("fullscreen"))
+        m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName);
+    else
+        m_Essential.m_Window.create(sf::VideoMode{buffer.at("width"),buffer.at("height")},m_GameName);
+    m_Essential.m_Window.clear(sf::Color::Black);
+    m_Essential.m_Window.display();
+    m_Essential.Framerate = buffer.at("framerate");
+    m_Essential.Updaterate = buffer.at("updaterate");;
+    m_Essential.Eventrate = buffer.at("eventrate");;
+    m_Essential.m_GuiStyle.textColor={201, 165, 111};
+    m_Essential.m_GuiStyle.defaultColor={45, 45, 42};
+    stateCurrentlySet = STATES :: NONE;
+    sf::Image icon;
+    icon.loadFromFile(m_Essential.m_PathToParent+"/data/Pics/build.png"); // File/Image/Pixel
+    m_Essential.m_Window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+}
+
+void StateMachine::refactor() {
+    std::string path_profile = m_Essential.m_PathToParent+"/data/Profiles/"+m_ProfileName;
+    std::ifstream o(path_profile);
+    buffer.clear();
+    o>>buffer;
+
+    if(buffer.at("fullscreen"))
+        m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName);
+    else
+        m_Essential.m_Window.create(sf::VideoMode{buffer.at("width"),buffer.at("height")},m_GameName);
+    m_Essential.m_Window.clear(sf::Color::Black);
+    m_Essential.m_Window.display();
+    m_Essential.Framerate = buffer.at("framerate");
+    m_Essential.Updaterate = buffer.at("updaterate");
+    m_Essential.Eventrate = buffer.at("eventrate");
+    m_Essential.refactor_is_needed = false;
+}
+

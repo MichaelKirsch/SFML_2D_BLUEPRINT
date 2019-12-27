@@ -1,9 +1,9 @@
 #include "MainMenu.h"
 
-MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential),m_settings(Essential){
+MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential){
     m1 = m_Gui.addMenu();
     m_Text = m_Gui.addSimpleText();
-    m_prog = m_Gui.addProgressBar(50,100);
+    m_prog = m_Gui.addProgressBar();
     m_prog2 = m_Gui.addProgressBar(50,150);
     m_prog->setBarColor({255,1,0,200});
     m_prog->setBackground({80,80,80,80});
@@ -40,16 +40,12 @@ void MainMenu::handle_events() {
     }
     if(m1->getButtonState(" Load Game "))
     {
-        m_SetObj.version = this->getRuntimeOfState();
-        m_settings.serialize(&m_SetObj);
+
     }
 
     if(m1->getButtonState(" Settings "))
     {
-        printf("%f\n",m_SetObj.version);
-        m_settings.deserialize(&m_SetObj);
-        printf("%f\n",m_SetObj.version);
-        this->m_Text->setText(std::to_string(m_SetObj.version));
+        getGamestateEssential()->refactor_is_needed = true;
     }
 
     sf::Event m_Event;

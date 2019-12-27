@@ -41,7 +41,6 @@ namespace gui
         sf::Color m_progressColor = sf::Color::Green;
         sf::Color m_backgroundColor = {80,80,80};
         sf::Text valueText;
-        EssentialWindow& m_Essential;
     };
 
 }

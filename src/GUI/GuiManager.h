@@ -25,7 +25,7 @@ namespace gui
         gui::SimpleText* addSimpleText();
         gui::SimpleText* addSimpleText(std::string);
         gui::SimpleText* addSimpleTextCentered(std::string,sf::Vector2u);
-        gui::progressBar* addProgressBar(int value,int max_value);
+        gui::progressBar* addProgressBar(int value = 50,int max_value = 100);
     private:
         EssentialWindow& m_Essential;
         std::vector<std::unique_ptr<Widget>> m_Elements;

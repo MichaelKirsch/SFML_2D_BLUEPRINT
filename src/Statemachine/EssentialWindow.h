@@ -27,6 +27,7 @@ class EssentialWindow
         sf::Font m_GlobFont;
         Style m_GuiStyle;
         sf::Music m_Music;
+        bool refactor_is_needed = false;
         std::string m_PathToParent = "";
         float Framerate, Updaterate, Eventrate;
         sf::Vector2f getPixelValues(sf::Vector2f percentages)

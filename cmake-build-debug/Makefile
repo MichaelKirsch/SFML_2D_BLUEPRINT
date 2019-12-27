@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT
+CMAKE_SOURCE_DIR = C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-de
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -230,33 +230,6 @@ src/GUI/Widgets/Button.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Button.cpp.s
 .PHONY : src/GUI/Widgets/Button.cpp.s
 
-src/GUI/Widgets/ExtensiveMenu.obj: src/GUI/Widgets/ExtensiveMenu.cpp.obj
-
-.PHONY : src/GUI/Widgets/ExtensiveMenu.obj
-
-# target to build an object file
-src/GUI/Widgets/ExtensiveMenu.cpp.obj:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/ExtensiveMenu.cpp.obj
-.PHONY : src/GUI/Widgets/ExtensiveMenu.cpp.obj
-
-src/GUI/Widgets/ExtensiveMenu.i: src/GUI/Widgets/ExtensiveMenu.cpp.i
-
-.PHONY : src/GUI/Widgets/ExtensiveMenu.i
-
-# target to preprocess a source file
-src/GUI/Widgets/ExtensiveMenu.cpp.i:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/ExtensiveMenu.cpp.i
-.PHONY : src/GUI/Widgets/ExtensiveMenu.cpp.i
-
-src/GUI/Widgets/ExtensiveMenu.s: src/GUI/Widgets/ExtensiveMenu.cpp.s
-
-.PHONY : src/GUI/Widgets/ExtensiveMenu.s
-
-# target to generate assembly for a file
-src/GUI/Widgets/ExtensiveMenu.cpp.s:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/ExtensiveMenu.cpp.s
-.PHONY : src/GUI/Widgets/ExtensiveMenu.cpp.s
-
 src/GUI/Widgets/Menu.obj: src/GUI/Widgets/Menu.cpp.obj
 
 .PHONY : src/GUI/Widgets/Menu.obj
@@ -311,32 +284,59 @@ src/GUI/Widgets/SimpleText.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/SimpleText.cpp.s
 .PHONY : src/GUI/Widgets/SimpleText.cpp.s
 
-src/GUI/Widgets/TexturedButtonWithOptionalText.obj: src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.obj
+src/GUI/Widgets/Slider.obj: src/GUI/Widgets/Slider.cpp.obj
 
-.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.obj
+.PHONY : src/GUI/Widgets/Slider.obj
 
 # target to build an object file
-src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.obj:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.obj
-.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.obj
+src/GUI/Widgets/Slider.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Slider.cpp.obj
+.PHONY : src/GUI/Widgets/Slider.cpp.obj
 
-src/GUI/Widgets/TexturedButtonWithOptionalText.i: src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.i
+src/GUI/Widgets/Slider.i: src/GUI/Widgets/Slider.cpp.i
 
-.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.i
+.PHONY : src/GUI/Widgets/Slider.i
 
 # target to preprocess a source file
-src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.i:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.i
-.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.i
+src/GUI/Widgets/Slider.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Slider.cpp.i
+.PHONY : src/GUI/Widgets/Slider.cpp.i
 
-src/GUI/Widgets/TexturedButtonWithOptionalText.s: src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s
+src/GUI/Widgets/Slider.s: src/GUI/Widgets/Slider.cpp.s
 
-.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.s
+.PHONY : src/GUI/Widgets/Slider.s
 
 # target to generate assembly for a file
-src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s
-.PHONY : src/GUI/Widgets/TexturedButtonWithOptionalText.cpp.s
+src/GUI/Widgets/Slider.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Slider.cpp.s
+.PHONY : src/GUI/Widgets/Slider.cpp.s
+
+src/GUI/Widgets/ToggleButton.obj: src/GUI/Widgets/ToggleButton.cpp.obj
+
+.PHONY : src/GUI/Widgets/ToggleButton.obj
+
+# target to build an object file
+src/GUI/Widgets/ToggleButton.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/ToggleButton.cpp.obj
+.PHONY : src/GUI/Widgets/ToggleButton.cpp.obj
+
+src/GUI/Widgets/ToggleButton.i: src/GUI/Widgets/ToggleButton.cpp.i
+
+.PHONY : src/GUI/Widgets/ToggleButton.i
+
+# target to preprocess a source file
+src/GUI/Widgets/ToggleButton.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/ToggleButton.cpp.i
+.PHONY : src/GUI/Widgets/ToggleButton.cpp.i
+
+src/GUI/Widgets/ToggleButton.s: src/GUI/Widgets/ToggleButton.cpp.s
+
+.PHONY : src/GUI/Widgets/ToggleButton.s
+
+# target to generate assembly for a file
+src/GUI/Widgets/ToggleButton.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/ToggleButton.cpp.s
+.PHONY : src/GUI/Widgets/ToggleButton.cpp.s
 
 src/GUI/Widgets/progressBar.obj: src/GUI/Widgets/progressBar.cpp.obj
 
@@ -500,6 +500,33 @@ src/States/MainMenu.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/MainMenu.cpp.s
 .PHONY : src/States/MainMenu.cpp.s
 
+src/States/Settings.obj: src/States/Settings.cpp.obj
+
+.PHONY : src/States/Settings.obj
+
+# target to build an object file
+src/States/Settings.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/Settings.cpp.obj
+.PHONY : src/States/Settings.cpp.obj
+
+src/States/Settings.i: src/States/Settings.cpp.i
+
+.PHONY : src/States/Settings.i
+
+# target to preprocess a source file
+src/States/Settings.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/Settings.cpp.i
+.PHONY : src/States/Settings.cpp.i
+
+src/States/Settings.s: src/States/Settings.cpp.s
+
+.PHONY : src/States/Settings.s
+
+# target to generate assembly for a file
+src/States/Settings.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/Settings.cpp.s
+.PHONY : src/States/Settings.cpp.s
+
 src/States/States.obj: src/States/States.cpp.obj
 
 .PHONY : src/States/States.obj
@@ -608,6 +635,33 @@ src/World/Worldgenerator.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/Worldgenerator.cpp.s
 .PHONY : src/World/Worldgenerator.cpp.s
 
+src/World/isotest.obj: src/World/isotest.cpp.obj
+
+.PHONY : src/World/isotest.obj
+
+# target to build an object file
+src/World/isotest.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/isotest.cpp.obj
+.PHONY : src/World/isotest.cpp.obj
+
+src/World/isotest.i: src/World/isotest.cpp.i
+
+.PHONY : src/World/isotest.i
+
+# target to preprocess a source file
+src/World/isotest.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/isotest.cpp.i
+.PHONY : src/World/isotest.cpp.i
+
+src/World/isotest.s: src/World/isotest.cpp.s
+
+.PHONY : src/World/isotest.s
+
+# target to generate assembly for a file
+src/World/isotest.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/World/isotest.cpp.s
+.PHONY : src/World/isotest.cpp.s
+
 src/World/simple.obj: src/World/simple.cpp.obj
 
 .PHONY : src/World/simple.obj
@@ -656,18 +710,18 @@ help:
 	@echo ... src/GUI/Widgets/Button.obj
 	@echo ... src/GUI/Widgets/Button.i
 	@echo ... src/GUI/Widgets/Button.s
-	@echo ... src/GUI/Widgets/ExtensiveMenu.obj
-	@echo ... src/GUI/Widgets/ExtensiveMenu.i
-	@echo ... src/GUI/Widgets/ExtensiveMenu.s
 	@echo ... src/GUI/Widgets/Menu.obj
 	@echo ... src/GUI/Widgets/Menu.i
 	@echo ... src/GUI/Widgets/Menu.s
 	@echo ... src/GUI/Widgets/SimpleText.obj
 	@echo ... src/GUI/Widgets/SimpleText.i
 	@echo ... src/GUI/Widgets/SimpleText.s
-	@echo ... src/GUI/Widgets/TexturedButtonWithOptionalText.obj
-	@echo ... src/GUI/Widgets/TexturedButtonWithOptionalText.i
-	@echo ... src/GUI/Widgets/TexturedButtonWithOptionalText.s
+	@echo ... src/GUI/Widgets/Slider.obj
+	@echo ... src/GUI/Widgets/Slider.i
+	@echo ... src/GUI/Widgets/Slider.s
+	@echo ... src/GUI/Widgets/ToggleButton.obj
+	@echo ... src/GUI/Widgets/ToggleButton.i
+	@echo ... src/GUI/Widgets/ToggleButton.s
 	@echo ... src/GUI/Widgets/progressBar.obj
 	@echo ... src/GUI/Widgets/progressBar.i
 	@echo ... src/GUI/Widgets/progressBar.s
@@ -686,6 +740,9 @@ help:
 	@echo ... src/States/MainMenu.obj
 	@echo ... src/States/MainMenu.i
 	@echo ... src/States/MainMenu.s
+	@echo ... src/States/Settings.obj
+	@echo ... src/States/Settings.i
+	@echo ... src/States/Settings.s
 	@echo ... src/States/States.obj
 	@echo ... src/States/States.i
 	@echo ... src/States/States.s
@@ -698,6 +755,9 @@ help:
 	@echo ... src/World/Worldgenerator.obj
 	@echo ... src/World/Worldgenerator.i
 	@echo ... src/World/Worldgenerator.s
+	@echo ... src/World/isotest.obj
+	@echo ... src/World/isotest.i
+	@echo ... src/World/isotest.s
 	@echo ... src/World/simple.obj
 	@echo ... src/World/simple.i
 	@echo ... src/World/simple.s

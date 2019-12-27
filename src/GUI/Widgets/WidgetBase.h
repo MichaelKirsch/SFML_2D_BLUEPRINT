@@ -11,6 +11,7 @@ namespace gui
     class Widget
     {
     public:
+        Widget(EssentialWindow& es):m_Essential(es){}
         virtual ~Widget()= default;
         virtual void draw(){};
         virtual void update(){};
@@ -20,6 +21,8 @@ namespace gui
         SNAPPING_TARGET m_snappedTo;
         bool isVisible = true;
         bool isActive = true;
+    protected:
+        EssentialWindow& m_Essential;
     };
 }
 

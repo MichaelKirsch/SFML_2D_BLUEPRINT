@@ -1,5 +1,5 @@
-"C:\Program Files\JetBrains\CLion 2019.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\micha\CLionProjects\SFML_2D_BLUEPRINT
--- Found SFML 2.5.1 in C:/Users/micha/CLionProjects/SFML_2D_BLUEPRINT/libs/SFML-2.5.1/lib/cmake/SFML
+"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Michael\CLionProjects\SFML_2D_BLUEPRINT
+-- Found SFML 2.5.1 in C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/libs/SFML-2.5.1/lib/cmake/SFML
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/micha/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug
+-- Build files have been written to: C:/Users/Michael/CLionProjects/SFML_2D_BLUEPRINT/cmake-build-debug

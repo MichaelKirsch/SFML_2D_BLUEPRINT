@@ -2,14 +2,14 @@
 
 #include "Button.h"
 
-gui::Button::Button(EssentialWindow* es, sf::Vector2u pos, std::string text, unsigned int width) : m_Essential(es){
-    this->m_Style = m_Essential->m_GuiStyle;
+gui::Button::Button(EssentialWindow& es, sf::Vector2u pos, std::string text, unsigned int width) : Widget(es){
+    this->m_Style = m_Essential.m_GuiStyle;
     this->m_Size = {width,m_Style.buttonHeight};
     this->isVisible = true;
     this->m_Pos = pos;
     this->isCentered = false;
     this->isActive = true;
-    this->m_Text.setFont(es->m_GlobFont);
+    this->m_Text.setFont(es.m_GlobFont);
     this->mouseOver = false;
     refactor();
 }
@@ -22,7 +22,7 @@ void gui::Button::setFillColor(sf::Color newCol) {
 
 void gui::Button::update() {
     auto bounds = m_Rect.getGlobalBounds();
-    auto mouse = m_Essential->m_Mouse.getPosition(m_Essential->m_Window);
+    auto mouse = m_Essential.m_Mouse.getPosition(m_Essential.m_Window);
     if(mouse.x>bounds.left&&mouse.x<bounds.left+bounds.width&&mouse.y>bounds.top&&mouse.y<bounds.top+bounds.height&&isActive)
     {
         //mouse is inside the button
@@ -47,13 +47,13 @@ void gui::Button::update() {
 bool gui::Button::isClicked() {
     update();
     if(isVisible&&isActive)
-        return (mouseOver&&m_Essential->m_Mouse.isButtonPressed(sf::Mouse::Left));
+        return (mouseOver&&m_Essential.m_Mouse.isButtonPressed(sf::Mouse::Left));
     return false;
 }
 
 void gui::Button::draw() {
-    m_Essential->m_Window.draw(m_Rect);
-    m_Essential->m_Window.draw(m_Text);
+    m_Essential.m_Window.draw(m_Rect);
+    m_Essential.m_Window.draw(m_Text);
 }
 
 void gui::Button::setSize(int newSize) {
@@ -63,7 +63,7 @@ void gui::Button::setSize(int newSize) {
 
 void gui::Button::refactor() {
     m_Text.setFillColor(m_Style.textColor);
-    auto windowSize = m_Essential->m_Window.getSize();
+    auto windowSize = m_Essential.m_Window.getSize();
     auto sizeInPixels = sf::Vector2f(m_Style.buttonHeight*(windowSize.x/100.f),m_Style.buttonHeight*(windowSize.y/100.f));
     auto positionInPixels =  sf::Vector2f(m_Pos.x*(windowSize.x/100.f),m_Pos.y*(windowSize.y/100.f));
     m_Text.setCharacterSize(sizeInPixels.y); //textsize will be calculated by the rect size
@@ -88,12 +88,6 @@ void gui::Button::setPositionOfTopLeft(sf::Vector2u pos) {
 void gui::Button::setPositionOfCenter(sf::Vector2u pos) {
     m_Pos = pos;
     isCentered = true;
-    refactor();
-}
-
-void gui::Button::setEssentialWindow(EssentialWindow *in) {
-    m_Essential = in;
-    this->m_Text.setFont(m_Essential->m_GlobFont);
     refactor();
 }
 

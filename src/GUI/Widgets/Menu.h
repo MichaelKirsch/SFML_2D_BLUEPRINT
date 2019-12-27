@@ -9,7 +9,7 @@ namespace gui
 {
     class Menu : public Widget {
     public:
-        Menu(EssentialWindow* es);
+        Menu(EssentialWindow& es);
         ~Menu()=default;
         void draw();
         void update();
@@ -18,7 +18,6 @@ namespace gui
         std::string getPressedButton();
         gui::Button* getButtonPtr(std::string buttonName);
     private:
-        EssentialWindow* m_Essential;
         std::map<std::string,std::unique_ptr<gui::Button>> m_Elements;
     };
 }
