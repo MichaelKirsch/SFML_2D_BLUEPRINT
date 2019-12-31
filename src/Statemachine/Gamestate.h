@@ -1,10 +1,11 @@
 #pragma once
 
 #include "EssentialWindow.h"
-
+#include "GuiManager.h"
 class GameState {
 public:
     GameState(EssentialWindow& window);
+    gui::Manager m_Gui;
     EssentialWindow* getGamestateEssential(){ return &m_Essential;};
     float getRuntimeOfState(){ return state_timer;};
     float getStartingTimeOfState(){ return time_at_start;};
@@ -15,15 +16,23 @@ public:
     void run();
 
     virtual void handle_events() {
-
+        m_Gui.update();
+        sf::Event m_Event;
+        while (getGamestateEssential()->m_Window.pollEvent(m_Event))
+        {
+            if (m_Event.type == sf::Event::Closed )
+            {
+                GameState::getGamestateEssential()->nextState = STATES::CLOSING;
+            }
+        }
     };
 
     virtual void logic() {
-        printf("base logic");
     };
 
     virtual void render() {
-        printf("base render");
+        m_Essential.m_Window.clear();
+        m_Gui.draw();
     };
 
     virtual ~GameState() = default;

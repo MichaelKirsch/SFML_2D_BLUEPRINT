@@ -14,7 +14,6 @@ public:
     void logic() override;
     void render() override;
 private:
-    gui::Manager m_Gui;
     gui::SimpleText* m_Text;
     gui::Menu* m1;
     sf::RectangleShape m_BackgroudPic;

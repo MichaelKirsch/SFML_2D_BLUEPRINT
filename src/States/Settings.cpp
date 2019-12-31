@@ -2,7 +2,7 @@
 
 #include "Settings.h"
 
-Settings::Settings(EssentialWindow &Essential) : GameState(Essential),m_Gui(Essential) {
+Settings::Settings(EssentialWindow &Essential) : GameState(Essential) {
     back = m_Gui.addButton("Save&Back",{40,32});
     m_Resolutions = m_Gui.addSimpleChoosingMenu("<",">",{"1920x1080","1600x900","1440x900","1280x800"});
     m_Resolutions->setPositionScreenPercent({40,12});
@@ -13,7 +13,7 @@ Settings::Settings(EssentialWindow &Essential) : GameState(Essential),m_Gui(Esse
 }
 
 void Settings::handle_events() {
-    m_Gui.update();
+    GameState::handle_events();
     if(back->isClicked())
     {
         std::string res = m_Resolutions->getCurrentOption();
@@ -53,7 +53,6 @@ void Settings::logic() {
 }
 
 void Settings::render() {
-    getGamestateEssential()->m_Window.clear();
-    m_Gui.draw();
+    GameState::render();
     getGamestateEssential()->m_Window.display();
 }

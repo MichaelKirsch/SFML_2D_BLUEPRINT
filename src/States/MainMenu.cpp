@@ -1,6 +1,6 @@
 #include "MainMenu.h"
 
-MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential),m_Gui(Essential){
+MainMenu::MainMenu(EssentialWindow& Essential) : GameState(Essential){
     m1 = m_Gui.addMenu();
     m_Text = m_Gui.addSimpleText();
     m_Text->setText("Olympus");

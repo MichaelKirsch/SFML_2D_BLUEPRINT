@@ -500,6 +500,33 @@ src/States/ChooseMap.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/ChooseMap.cpp.s
 .PHONY : src/States/ChooseMap.cpp.s
 
+src/States/Game.obj: src/States/Game.cpp.obj
+
+.PHONY : src/States/Game.obj
+
+# target to build an object file
+src/States/Game.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/Game.cpp.obj
+.PHONY : src/States/Game.cpp.obj
+
+src/States/Game.i: src/States/Game.cpp.i
+
+.PHONY : src/States/Game.i
+
+# target to preprocess a source file
+src/States/Game.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/Game.cpp.i
+.PHONY : src/States/Game.cpp.i
+
+src/States/Game.s: src/States/Game.cpp.s
+
+.PHONY : src/States/Game.s
+
+# target to generate assembly for a file
+src/States/Game.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/Game.cpp.s
+.PHONY : src/States/Game.cpp.s
+
 src/States/MainMenu.obj: src/States/MainMenu.cpp.obj
 
 .PHONY : src/States/MainMenu.obj
@@ -740,6 +767,9 @@ help:
 	@echo ... src/States/ChooseMap.obj
 	@echo ... src/States/ChooseMap.i
 	@echo ... src/States/ChooseMap.s
+	@echo ... src/States/Game.obj
+	@echo ... src/States/Game.i
+	@echo ... src/States/Game.s
 	@echo ... src/States/MainMenu.obj
 	@echo ... src/States/MainMenu.i
 	@echo ... src/States/MainMenu.s

@@ -14,7 +14,6 @@ public:
     void logic() override;
     void render() override;
 private:
-    gui::Manager m_Gui;
     gui::SmipleChoosingMenu* m_Resolutions;
     gui::ToggleButton* m_fullscreen;
     gui::ToggleButton* m_vsync;

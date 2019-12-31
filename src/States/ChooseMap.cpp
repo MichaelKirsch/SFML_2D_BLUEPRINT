@@ -2,20 +2,19 @@
 
 #include "ChooseMap.h"
 
-ChooseMap::ChooseMap(EssentialWindow &es) : m_Essential(es),GameState(es),m_GuiManager(es) {
+ChooseMap::ChooseMap(EssentialWindow &es) : m_Essential(es), GameState(es) {
 
 }
 
 void ChooseMap::init() {
     srand(time(0));
     seed = rand();
-
-    seedText = m_GuiManager.addSimpleTextCentered("Seed:"+std::to_string(seed),{80,50+5*m_Essential.m_GuiStyle.buttonHeight});
-    ChosenRegion = m_GuiManager.addSimpleTextCentered("You Chose:"+std::to_string(position_in_map.x)+"|"+std::to_string(position_in_map.y),{80,20});
-    nextMap = m_GuiManager.addButtonCentered("Generate new Map",{80,50-2*m_Essential.m_GuiStyle.buttonHeight});
-    useThisMap = m_GuiManager.addButtonCentered("Start the game on Ship",{80,50});
-    spawnOnLand = m_GuiManager.addButtonCentered("Start the game on Land",{80,50+2*m_Essential.m_GuiStyle.buttonHeight});
-    backButton = m_GuiManager.addButtonCentered("Back",{80,50+4*m_Essential.m_GuiStyle.buttonHeight});
+    seedText = m_Gui.addSimpleTextCentered("Seed:" + std::to_string(seed), {80, 50 + 5 * m_Essential.m_GuiStyle.buttonHeight});
+    ChosenRegion = m_Gui.addSimpleTextCentered("You Chose:" + std::to_string(position_in_map.x) + "|" + std::to_string(position_in_map.y), {80, 20});
+    nextMap = m_Gui.addButtonCentered("Generate new Map", {80, 50 - 2 * m_Essential.m_GuiStyle.buttonHeight});
+    useThisMap = m_Gui.addButtonCentered("Start the game on Ship", {80, 50});
+    spawnOnLand = m_Gui.addButtonCentered("Start the game on Land", {80, 50 + 2 * m_Essential.m_GuiStyle.buttonHeight});
+    backButton = m_Gui.addButtonCentered("Back", {80, 50 + 4 * m_Essential.m_GuiStyle.buttonHeight});
     mapLining.setPosition(m_Essential.getPixelValues({10,10}));
     auto size_box = m_Essential.getPixelValues({80,80});
     mapLining.setSize({size_box.y,size_box.y}); //this is right as it is. we need the y-value both times to get it square and to be sure that it will fit with the buttons
@@ -44,7 +43,7 @@ void ChooseMap::handle_events() {
             useThisMap->setActive(true);
         }
 
-        m_GuiManager.update();
+        m_Gui.update();
         if(backButton->isClicked())
         {
             m_Essential.nextState = STATES :: MENU;
@@ -86,7 +85,7 @@ void ChooseMap::render() {
     if(initialiced)
     {
         m_Essential.m_Window.clear();
-        m_GuiManager.draw();
+        m_Gui.draw();
         m_Essential.m_Window.draw(mapLining);
         m_Essential.m_Window.draw(m_VertexMap);
         m_Essential.m_Window.draw(mouse_circle);

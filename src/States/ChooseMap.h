@@ -26,7 +26,6 @@ private:
     int worldSizeInBlocks = 100000;
     sf::RectangleShape mouse_circle;
     EssentialWindow& m_Essential;
-    gui::Manager m_GuiManager;
     gui::SimpleText* seedText= nullptr;
     gui::SimpleText* ChosenRegion= nullptr;
     gui::Button* nextMap= nullptr;
