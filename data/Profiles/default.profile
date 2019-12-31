@@ -1,1 +1,1 @@
-{"eventrate":100,"framerate":60,"fullscreen":false,"height":1000,"name":"default","updaterate":40,"vsync":false,"width":1600}
+{"eventrate":100,"framerate":60,"fullscreen":false,"height":1080,"name":"default","updaterate":40,"vsync":true,"width":1920}

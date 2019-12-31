@@ -16,7 +16,6 @@ public:
 private:
     gui::Manager m_Gui;
     gui::SmipleChoosingMenu* m_Resolutions;
-    gui::SimpleText* m_Text;
     gui::ToggleButton* m_fullscreen;
     gui::ToggleButton* m_vsync;
     gui::Button* back;
