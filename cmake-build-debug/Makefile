@@ -311,6 +311,33 @@ src/GUI/Widgets/Slider.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/Slider.cpp.s
 .PHONY : src/GUI/Widgets/Slider.cpp.s
 
+src/GUI/Widgets/SmipleChoosingMenu.obj: src/GUI/Widgets/SmipleChoosingMenu.cpp.obj
+
+.PHONY : src/GUI/Widgets/SmipleChoosingMenu.obj
+
+# target to build an object file
+src/GUI/Widgets/SmipleChoosingMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/SmipleChoosingMenu.cpp.obj
+.PHONY : src/GUI/Widgets/SmipleChoosingMenu.cpp.obj
+
+src/GUI/Widgets/SmipleChoosingMenu.i: src/GUI/Widgets/SmipleChoosingMenu.cpp.i
+
+.PHONY : src/GUI/Widgets/SmipleChoosingMenu.i
+
+# target to preprocess a source file
+src/GUI/Widgets/SmipleChoosingMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/SmipleChoosingMenu.cpp.i
+.PHONY : src/GUI/Widgets/SmipleChoosingMenu.cpp.i
+
+src/GUI/Widgets/SmipleChoosingMenu.s: src/GUI/Widgets/SmipleChoosingMenu.cpp.s
+
+.PHONY : src/GUI/Widgets/SmipleChoosingMenu.s
+
+# target to generate assembly for a file
+src/GUI/Widgets/SmipleChoosingMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/GUI/Widgets/SmipleChoosingMenu.cpp.s
+.PHONY : src/GUI/Widgets/SmipleChoosingMenu.cpp.s
+
 src/GUI/Widgets/ToggleButton.obj: src/GUI/Widgets/ToggleButton.cpp.obj
 
 .PHONY : src/GUI/Widgets/ToggleButton.obj
@@ -527,33 +554,6 @@ src/States/Settings.cpp.s:
 	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/Settings.cpp.s
 .PHONY : src/States/Settings.cpp.s
 
-src/States/States.obj: src/States/States.cpp.obj
-
-.PHONY : src/States/States.obj
-
-# target to build an object file
-src/States/States.cpp.obj:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/States.cpp.obj
-.PHONY : src/States/States.cpp.obj
-
-src/States/States.i: src/States/States.cpp.i
-
-.PHONY : src/States/States.i
-
-# target to preprocess a source file
-src/States/States.cpp.i:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/States.cpp.i
-.PHONY : src/States/States.cpp.i
-
-src/States/States.s: src/States/States.cpp.s
-
-.PHONY : src/States/States.s
-
-# target to generate assembly for a file
-src/States/States.cpp.s:
-	$(MAKE) -f CMakeFiles\CAESAR-2D.dir\build.make CMakeFiles/CAESAR-2D.dir/src/States/States.cpp.s
-.PHONY : src/States/States.cpp.s
-
 src/Util/Serialization.obj: src/Util/Serialization.cpp.obj
 
 .PHONY : src/Util/Serialization.obj
@@ -719,6 +719,9 @@ help:
 	@echo ... src/GUI/Widgets/Slider.obj
 	@echo ... src/GUI/Widgets/Slider.i
 	@echo ... src/GUI/Widgets/Slider.s
+	@echo ... src/GUI/Widgets/SmipleChoosingMenu.obj
+	@echo ... src/GUI/Widgets/SmipleChoosingMenu.i
+	@echo ... src/GUI/Widgets/SmipleChoosingMenu.s
 	@echo ... src/GUI/Widgets/ToggleButton.obj
 	@echo ... src/GUI/Widgets/ToggleButton.i
 	@echo ... src/GUI/Widgets/ToggleButton.s
@@ -743,9 +746,6 @@ help:
 	@echo ... src/States/Settings.obj
 	@echo ... src/States/Settings.i
 	@echo ... src/States/Settings.s
-	@echo ... src/States/States.obj
-	@echo ... src/States/States.i
-	@echo ... src/States/States.s
 	@echo ... src/Util/Serialization.obj
 	@echo ... src/Util/Serialization.i
 	@echo ... src/Util/Serialization.s

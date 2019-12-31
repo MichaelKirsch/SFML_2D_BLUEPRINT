@@ -1,10 +1,8 @@
 #include "src/Statemachine/StateMachine.h"
-#include "Serialization.h"
 
 int main()
 {
-
-    StateMachine stm{"Ceasar-2D","default.json"};
+    StateMachine stm{"Olympus","default.profile"};
     stm.dispatch(STATES::MENU);
 }
 

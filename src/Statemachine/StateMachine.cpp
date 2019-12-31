@@ -3,16 +3,15 @@
 
     StateMachine::StateMachine(std::string game_name, int framerate, int updaterate, int eventrate, bool fullscreen) : m_GameName(game_name) {
         if(fullscreen)
-            m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName);
+            m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName,sf::Style::None);
         else
-            m_Essential.m_Window.create(sf::VideoMode{800,600},m_GameName);
+            m_Essential.m_Window.create(sf::VideoMode{800,600},m_GameName,sf::Style::None);
+
         m_Essential.m_Window.clear(sf::Color::Black);
         m_Essential.m_Window.display();
         m_Essential.Framerate = framerate;
         m_Essential.Updaterate = updaterate;
         m_Essential.Eventrate = eventrate;
-        m_Essential.m_GuiStyle.textColor={201, 165, 111};
-        m_Essential.m_GuiStyle.defaultColor={45, 45, 42};
         stateCurrentlySet = STATES :: NONE;
         std::string path= std::experimental::filesystem::current_path().parent_path().string();
         m_Essential.m_PathToParent = path;
@@ -35,8 +34,8 @@ void StateMachine::setState() {
             case STATES::MENU:
                 uniquePtrState=std::make_unique<MainMenu>(m_Essential);
                 break;
-            case STATES::EXITING:
-                uniquePtrState=std::make_unique<Exiting>(m_Essential);
+            case STATES::SETIINGS:
+                uniquePtrState=std::make_unique<Settings>(m_Essential);
                 break;
             case STATES::CHOOSE_MAP:
                 uniquePtrState=std::make_unique<ChooseMap>(m_Essential);
@@ -71,16 +70,15 @@ StateMachine::StateMachine(std::string game_name,std::string profile): m_GameNam
     std::ifstream o(path_profile);
     o>>buffer;
     if(buffer.at("fullscreen"))
-        m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName);
+        m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName,sf::Style::None);
     else
-        m_Essential.m_Window.create(sf::VideoMode{buffer.at("width"),buffer.at("height")},m_GameName);
+        m_Essential.m_Window.create(sf::VideoMode{buffer.at("width"),buffer.at("height")},m_GameName,sf::Style::None);
     m_Essential.m_Window.clear(sf::Color::Black);
     m_Essential.m_Window.display();
+    m_Essential.m_Window.setVerticalSyncEnabled(buffer.at("vsync"));
     m_Essential.Framerate = buffer.at("framerate");
     m_Essential.Updaterate = buffer.at("updaterate");;
     m_Essential.Eventrate = buffer.at("eventrate");;
-    m_Essential.m_GuiStyle.textColor={201, 165, 111};
-    m_Essential.m_GuiStyle.defaultColor={45, 45, 42};
     stateCurrentlySet = STATES :: NONE;
     sf::Image icon;
     icon.loadFromFile(m_Essential.m_PathToParent+"/data/Pics/build.png"); // File/Image/Pixel
@@ -94,11 +92,12 @@ void StateMachine::refactor() {
     o>>buffer;
 
     if(buffer.at("fullscreen"))
-        m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName);
+        m_Essential.m_Window.create(sf::VideoMode::getDesktopMode(),m_GameName,sf::Style::None);
     else
-        m_Essential.m_Window.create(sf::VideoMode{buffer.at("width"),buffer.at("height")},m_GameName);
+        m_Essential.m_Window.create(sf::VideoMode{buffer.at("width"),buffer.at("height")},m_GameName,sf::Style::None);
     m_Essential.m_Window.clear(sf::Color::Black);
     m_Essential.m_Window.display();
+    m_Essential.m_Window.setVerticalSyncEnabled(buffer.at("vsync"));
     m_Essential.Framerate = buffer.at("framerate");
     m_Essential.Updaterate = buffer.at("updaterate");
     m_Essential.Eventrate = buffer.at("eventrate");

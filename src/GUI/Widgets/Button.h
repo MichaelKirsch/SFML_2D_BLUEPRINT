@@ -13,6 +13,7 @@ namespace gui
         Button(EssentialWindow& es, sf::Vector2u pos = {0,0}, std::string text = "not configured yet", unsigned int width = 1);
         ~Button();
         void draw();
+        sf::FloatRect getGlobalBounds(){ return m_Rect.getGlobalBounds();};
         void setVisible(bool visibility);
         void setSize(int newSize);
         void setTextColor(sf::Color newColor);

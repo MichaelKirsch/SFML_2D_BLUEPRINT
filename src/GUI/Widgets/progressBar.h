@@ -7,10 +7,6 @@ namespace gui
 {
     class progressBar : public Widget{
     public:
-        enum class ORIENTATION
-        {
-            VERTICAL,HORIZONTAL
-        };
         progressBar(EssentialWindow& m_es);
         void setValue(int value){m_value =value;refactor();};
         void setMaxValue(int max){m_maxValue=max;refactor();};

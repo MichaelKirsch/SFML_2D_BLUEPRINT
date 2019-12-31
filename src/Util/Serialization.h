@@ -28,7 +28,7 @@ namespace serial
         void in()
         {
             std::string path= std::experimental::filesystem::current_path().parent_path().string();
-            path+="/data/Profiles/default.json";
+            path+="/data/Profiles/default.profile";
             std::ifstream o(path);
             nlohmann::json buf;
             o>>buf;

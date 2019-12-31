@@ -7,7 +7,9 @@
 
 struct Style
 {
-    sf::Color defaultColor ={208, 235, 52};
+    sf::Color defaultColor ={80, 80, 80,200};
+    sf::Color defaultBackground = {80, 80, 80,200};
+    sf::Color actuatedWidget = {208, 20, 52};
     sf::Color textColor ={217, 160, 76};
     sf::Color inactiveColor = {20,20,20};
     sf::Color textColorInactive = {200,40,40};
